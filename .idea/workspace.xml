@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42349ec0-fde2-4834-a5ff-c04f9ac539cb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/static/bg-index.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/python-getting-started.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/client_secrets.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/app.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/appFiles/app-users.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/appFiles/interest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/appFiles/location.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/appFiles/screens.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/appFiles/trending.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/blog.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/blogFiles/age_group.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/blogFiles/articles.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/blogFiles/gender.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/blogFiles/interest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/blogFiles/international.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/blogFiles/location.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/blogFiles/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/blogFiles/os.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hello/templates/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gettingstarted/settings.py" afterPath="$PROJECT_DIR$/gettingstarted/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gettingstarted/urls.py" afterPath="$PROJECT_DIR$/gettingstarted/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/templates/base.html" afterPath="$PROJECT_DIR$/hello/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/templates/index.html" afterPath="$PROJECT_DIR$/hello/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/views.py" afterPath="$PROJECT_DIR$/hello/views.py" />
-    </list>
+    <list default="true" id="42349ec0-fde2-4834-a5ff-c04f9ac539cb" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +14,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hello/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
+            <state relative-caret-position="396">
               <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
@@ -660,7 +630,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hello/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
+        <state relative-caret-position="396">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />

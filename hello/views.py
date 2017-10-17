@@ -91,7 +91,7 @@ def bloggender(request):
     avg_session_duration = gender.loc[10, 'Unnamed: 4']
     page_views = gender.loc[10, 'Unnamed: 5']
 
-    # print total_users,new_users,total_sessions,avg_session_duration,page_views
+
 
     # FEMALE_DATA
 
@@ -134,7 +134,7 @@ def bloggender(request):
     avg_session_duration = gender_14.loc[10, 'Unnamed: 4']
     page_views = gender_14.loc[10, 'Unnamed: 5']
 
-    # print total_users,new_users,total_sessions,avg_session_duration,page_views
+
 
     # FEMALE_DATA
 
@@ -178,7 +178,7 @@ def bloggender(request):
     avg_session_duration = gender_30.loc[10, 'Unnamed: 4']
     page_views = gender_30.loc[10, 'Unnamed: 5']
 
-    # print total_users,new_users,total_sessions,avg_session_duration,page_views
+
 
     # FEMALE_DATA
 
@@ -222,7 +222,7 @@ def bloggender(request):
     avg_session_duration = gender_lm.loc[10, 'Unnamed: 4']
     page_views = gender_lm.loc[10, 'Unnamed: 5']
 
-    # print total_users,new_users,total_sessions,avg_session_duration,page_views
+
 
     # FEMALE_DATA
 
@@ -266,7 +266,7 @@ def bloggender(request):
     avg_session_duration = gender_lt.loc[10, 'Unnamed: 4']
     page_views = gender_lt.loc[10, 'Unnamed: 5']
 
-    # print total_users,new_users,total_sessions,avg_session_duration,page_views
+
 
     # FEMALE_DATA
 
@@ -1157,7 +1157,7 @@ def appinterest(request):
         return Counter(lst3)
 
     test = industry()
-    print test[0]
+
     interest = dict(interest())
     industry = dict(industry())
 
@@ -1560,7 +1560,7 @@ def trendingProfiles(request):
                      'mediaurl': list(top5['mediaurl'])[4], 'score': list(top5['score'])[4]}}
 
 
-    print month5['1']['postedbyUrl']
+
 
     return render(request, 'appFiles/trending.html', locals())
 
