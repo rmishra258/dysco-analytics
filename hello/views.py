@@ -46,7 +46,7 @@ def test(request):
 
     return render(request, 'test.html', locals())
 
-@login_required(login_url='login')
+
 def db(request):
 
     greeting = Greeting()
