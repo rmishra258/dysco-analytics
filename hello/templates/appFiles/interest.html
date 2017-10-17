@@ -1,0 +1,341 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="card">
+  <h4 class="card-header" align="center"><i class="fa fa-heart" aria-hidden="true"></i> Interest Groups</h4>
+  <div class="card-body">
+    <h3 class="card-title">What to take away from this report</h3>
+      <p class="card-text">This report shows the Intreset wise distribution of the audience who have visited <b>Dysco App.</b> Here you will find the data about various Interest groups and their Industry</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> This report helps to project the diversity across audience belonging to different Interest groups and Industries who have installed Dysco app</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> The <span class="badge badge-success">Insights</span> tab gives a detailed information regarding various aspects related to the Blog</p>
+
+  </div>
+</div>
+<br>
+
+<!--Interest -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">User Interest</h1>
+    <p class="lead">This data shows the number of times each Interest tags were used to register</p>
+
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card border-success">
+      <div class="card-body">
+        <h4 class="card-title">Travel</h4>
+          <h4 class="card-title">{{ Travel }}</h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title">Photography</h4>
+          <h4 class="card-title">{{ Photography }}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card border-secondary">
+      <div class="card-body">
+        <h4 class="card-title">Music</h4>
+          <h4 class="card-title">{{ Music }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card border-success">
+      <div class="card-body">
+        <h4 class="card-title">Art</h4>
+          <h4 class="card-title">{{ Art }}</h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title">Entrepreneurship</h4>
+          <h4 class="card-title">{{ Entrepreneurship }}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card border-secondary">
+      <div class="card-body">
+        <h4 class="card-title">Technology</h4>
+          <h4 class="card-title">{{ Technology }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card border-success">
+      <div class="card-body">
+        <h4 class="card-title">Fashion</h4>
+          <h4 class="card-title">{{ Fashion }}</h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title">Film</h4>
+          <h4 class="card-title">{{ Film }}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card border-secondary">
+      <div class="card-body">
+        <h4 class="card-title">Reading</h4>
+          <h4 class="card-title">{{ Reading }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card border-success">
+      <div class="card-body">
+        <h4 class="card-title">Fitness</h4>
+          <h4 class="card-title">{{ Fitness }}</h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title">Social</h4>
+          <h4 class="card-title">{{ Social }}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card border-secondary">
+      <div class="card-body">
+        <h4 class="card-title">Interior</h4>
+          <h4 class="card-title">{{ Interior }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card border-success">
+      <div class="card-body">
+        <h4 class="card-title">Makeup</h4>
+          <h4 class="card-title">{{ Makeup }}</h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title">Jewellery</h4>
+          <h4 class="card-title">{{ Jewellery }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!--  Industry-->
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Industry</h1>
+    <p class="lead">This data shows the various industry our users belong to</p>
+
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card border-success">
+      <div class="card-body">
+        <h4 class="card-title">Branding, Design & Visual Arts</h4>
+          <h4 class="card-title">{{ branding }}</h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title">Web, Tech & Innovation</h4>
+          <h4 class="card-title">{{ web }}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card border-secondary">
+      <div class="card-body">
+        <h4 class="card-title">Photography & Videography</h4>
+          <h4 class="card-title">{{ photography }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card border-success">
+      <div class="card-body">
+        <h4 class="card-title">Advertising, Marketing & PR</h4>
+          <h4 class="card-title">{{ advertising }}</h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title">Other</h4>
+          <h4 class="card-title">{{ other }}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card border-secondary">
+      <div class="card-body">
+        <h4 class="card-title">Art, Architecture & Interiors</h4>
+          <h4 class="card-title">{{ art }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card border-success">
+      <div class="card-body">
+        <h4 class="card-title">Business & Industry</h4>
+          <h4 class="card-title">{{ business }}</h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title">Music</h4>
+          <h4 class="card-title">{{ music }}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card border-secondary">
+      <div class="card-body">
+        <h4 class="card-title">Fashion Styling & Blogging</h4>
+          <h4 class="card-title">{{ fashion }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card border-success">
+      <div class="card-body">
+        <h4 class="card-title">Food & Beverage</h4>
+          <h4 class="card-title">{{ food }}</h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title">Film & Production</h4>
+          <h4 class="card-title">{{ film }}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card border-secondary">
+      <div class="card-body">
+        <h4 class="card-title">Writing & Journalism</h4>
+          <h4 class="card-title">{{ writing }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card border-success">
+      <div class="card-body">
+        <h4 class="card-title">Clothing & Jewellery</h4>
+          <h4 class="card-title">{{ clothing }}</h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title">Travel & Hospitality</h4>
+          <h4 class="card-title">{{ travel }}</h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title">Health & Fitness</h4>
+          <h4 class="card-title">{{ health }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card border-success">
+      <div class="card-body">
+        <h4 class="card-title">Hair & Beauty</h4>
+          <h4 class="card-title">{{ hair }}</h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title">Gifts & Accessories</h4>
+          <h4 class="card-title">{{ gifts }}</h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title">Weddings & Events</h4>
+          <h4 class="card-title">{{ weddings }}</h4>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<br>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card border-success">
+      <div class="card-body">
+        <h4 class="card-title">Social Work & Activism</h4>
+          <h4 class="card-title">{{ social }}</h4>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</div>
+</div>
+
+{% endblock %}

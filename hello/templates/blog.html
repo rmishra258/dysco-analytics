@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<h3 class="display-4" align="center">Dysco Blog</h3>
+
+<br>
+<!-- cards -->
+<div class="card-deck">
+  <div class="card">
+
+    <div class="card-body">
+
+      <h4 class="card-title"><i class="fa fa-users" aria-hidden="true"></i> Age group</h4>
+      <p class="card-text">What are the different age group of our audience who visited Dysco Blog</p>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'blog-age-group' %}">
+      <button type="button" class="btn btn-warning">View</button>
+      </a>
+    </div>
+  </div>
+    <br>
+  <div class="card">
+
+    <div class="card-body">
+      <h4 class="card-title"><i class="fa fa-venus-mars" aria-hidden="true"></i> Gender</h4>
+      <p class="card-text">Dysco blog visitors segregated by Male and Female</p>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'blog-gender'%}">
+      <button type="button" class="btn btn-warning">View</button>
+      </a>
+    </div>
+  </div>
+    <br>
+  <div class="card">
+
+    <div class="card-body">
+      <h4 class="card-title"><i class="fa fa-compass" aria-hidden="true"></i> City wise</h4>
+      <p class="card-text">Visitors on Dysco blog from top 10 cities across India</p>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'blog-location' %}">
+      <button type="button" class="btn btn-warning">View</button>
+      </a>
+    </div>
+  </div>
+</div>
+<br>
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-star-half-o" aria-hidden="true"></i> Featured
+  </div>
+  <div class="card-body">
+    <h4 class="card-title"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Articles</h4>
+    <p class="card-text">Find out what articles on the blog are trending and how many page views they have acquired, this data helps in creating contents which draws the user to our blog</p>
+    <a href="{% url 'blog-articles' %}" class="btn btn-primary">View</a>
+  </div>
+</div>
+<br>
+<div class="card-deck">
+  <div class="card">
+
+    <div class="card-body">
+      <h4 class="card-title"><i class="fa fa-heart-o" aria-hidden="true"></i> Interest tags</h4>
+      <p class="card-text">What are the specific interest groups that our visitors categorise unto</p>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'blog-interest' %}">
+      <button type="button" class="btn btn-warning">View</button>
+      </a>
+    </div>
+  </div>
+    <br>
+  <div class="card">
+
+    <div class="card-body">
+      <h4 class="card-title"><i class="fa fa-desktop" aria-hidden="true"></i> Operating Systems</h4>
+      <p class="card-text">Find out the stats breakdown by different devices used to visit Dysco blog</p>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'blog-os' %}">
+        <button type="button" class="btn btn-warning">View</button>
+      </a>
+    </div>
+  </div>
+    <br>
+   <div class="card">
+
+    <div class="card-body">
+      <h4 class="card-title"><i class="fa fa-globe" aria-hidden="true"></i> International</h4>
+      <p class="card-text">Visitors from various countries across the globe who have visited Dysco Blog</p>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'blog-international' %}">
+      <button type="button" class="btn btn-warning">View</button>
+      </a>
+    </div>
+  </div>
+
+</div>
+<!-- cards end -->
+
+{% endblock %}
+

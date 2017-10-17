@@ -1,0 +1,457 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="card">
+  <h4 class="card-header" align="center"><i class="fa fa-venus-mars" aria-hidden="true"></i> Gender wise data</h4>
+  <div class="card-body">
+    <h3 class="card-title">What to take away from this report</h3>
+      <p class="card-text">This report shows the gender distribution of the audience who have visited <b>Dysco Blog.</b> Here you will find the comparision between Male and Female audience across last week and current week, last month and current month and lifetime distribution across both genders</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> This report helps to project the diversity across Male and Female audience who have visited the Blog</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> The <span class="badge badge-success">Insights</span> tab gives a detailed information regarding various aspects related to the Blog</p>
+
+  </div>
+</div>
+<br>
+
+<!-- WEEKLY REPORT -->
+<div class="card">
+  <h4 class="card-header" align="center">Weekly Report</h4>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Last 7 Days</b> </font>
+            <!-- insert canvas -->
+            <canvas id="7days"></canvas>
+          <br><span class="badge badge-success">Insights</span>
+          <table class="table table-bordered table-inverse">
+            <thead>
+              <tr>
+                <th class="bg-danger">Male</th>
+                <th class="bg-dark">{{ male_total7 }}% </th>
+                <th class="bg-danger">Female</th>
+                <th class="bg-dark">{{ female_total7 }}%</th>
+              </tr>
+            </thead>
+          </table>
+
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>M</th>
+              <th>F</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>Total Users</td>
+              <td>{{ ref7.m_total_users }}</td>
+              <td>{{ ref7.f_total_users }}</td>
+              <td>{{ ref7.total_users }}</td>
+
+            </tr>
+            <tr>
+
+              <td>New Users</td>
+              <td>{{ ref7.m_new_users }}</td>
+              <td>{{ ref7.f_new_users }}</td>
+              <td>{{ ref7.new_users }}</td>
+
+            </tr>
+            <tr>
+
+              <td>Avg Duration</td>
+              <td>{{ ref7.m_avg_session_duration }}</td>
+              <td>{{ ref7.f_avg_session_duration }}</td>
+              <td>{{ ref7.avg_session_duration }}</td>
+
+            </tr>
+            <tr>
+
+              <td>Pages / Session</td>
+              <td>{{ ref7.m_page_views }}</td>
+              <td>{{ ref7.f_page_views }}</td>
+              <td>{{ ref7.page_views }}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="blue"><b class="card-title">Last 14 days</b></font>
+            <!-- insert canvas -->
+          <canvas id="14days"> </canvas>
+          <br><span class="badge badge-success">Insights</span>
+          <table class="table table-bordered table-inverse">
+            <thead>
+              <tr>
+                <th class="bg-danger">Male</th>
+                <th class="bg-dark">{{ male_total14 }}% </th>
+                <th class="bg-danger">Female</th>
+                <th class="bg-dark">{{ female_total14 }}%</th>
+              </tr>
+            </thead>
+          </table>
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>M</th>
+              <th>F</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>Total Users</td>
+              <td>{{ ref14.m_total_users }}</td>
+              <td>{{ ref14.f_total_users }}</td>
+              <td>{{ ref14.total_users }}</td>
+
+            </tr>
+            <tr>
+
+              <td>New Users</td>
+              <td>{{ ref14.m_new_users }}</td>
+              <td>{{ ref14.f_new_users }}</td>
+              <td>{{ ref14.new_users }}</td>
+
+            </tr>
+            <tr>
+
+              <td>Avg Duration</td>
+              <td>{{ ref14.m_avg_session_duration }}</td>
+              <td>{{ ref14.f_avg_session_duration }}</td>
+              <td>{{ ref14.avg_session_duration }}</td>
+
+            </tr>
+            <tr>
+
+              <td>Pages / Session</td>
+              <td>{{ ref14.m_page_views }}</td>
+              <td>{{ ref14.f_page_views }}</td>
+              <td>{{ ref14.page_views }}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<br>
+
+<!-- MONTHLY REPORT -->
+<div class="card">
+  <h4 class="card-header" align="center">Monthly Report</h4>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Last Month</b> </font>
+            <!-- insert canvas -->
+            <canvas id="lastmonth"></canvas>
+            <br><span class="badge badge-success">Insights</span>
+          <table class="table table-bordered table-inverse">
+            <thead>
+              <tr>
+                <th class="bg-danger">Male</th>
+                <th class="bg-dark">{{ male_totallm }}% </th>
+                <th class="bg-danger">Female</th>
+                <th class="bg-dark">{{ female_totallm }}%</th>
+              </tr>
+            </thead>
+          </table>
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>M</th>
+              <th>F</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>Total Users</td>
+              <td>{{ reflm.m_total_users }}</td>
+              <td>{{ reflm.f_total_users }}</td>
+              <td>{{ reflm.total_users }}</td>
+
+            </tr>
+            <tr>
+
+              <td>New Users</td>
+              <td>{{ reflm.m_new_users }}</td>
+              <td>{{ reflm.f_new_users }}</td>
+              <td>{{ reflm.new_users }}</td>
+
+            </tr>
+            <tr>
+
+              <td>Avg Duration</td>
+              <td>{{ reflm.m_avg_session_duration }}</td>
+              <td>{{ reflm.f_avg_session_duration }}</td>
+              <td>{{ reflm.avg_session_duration }}</td>
+
+            </tr>
+            <tr>
+
+              <td>Pages / Session</td>
+              <td>{{ reflm.m_page_views }}</td>
+              <td>{{ reflm.f_page_views }}</td>
+              <td>{{ reflm.page_views }}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="blue"><b class="card-title">This Month</b></font>
+            <!-- insert canvas -->
+          <canvas id="thismonth"> </canvas>
+          <br><span class="badge badge-success">Insights</span>
+          <table class="table table-bordered table-inverse">
+            <thead>
+              <tr>
+                <th class="bg-danger">Male</th>
+                <th class="bg-dark">{{ male_total30 }}% </th>
+                <th class="bg-danger">Female</th>
+                <th class="bg-dark">{{ female_total30 }}%</th>
+              </tr>
+            </thead>
+          </table>
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>M</th>
+              <th>F</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>Total Users</td>
+              <td>{{ ref30.m_total_users }}</td>
+              <td>{{ ref30.f_total_users }}</td>
+              <td>{{ ref30.total_users }}</td>
+
+            </tr>
+            <tr>
+
+              <td>New Users</td>
+              <td>{{ ref30.m_new_users }}</td>
+              <td>{{ ref30.f_new_users }}</td>
+              <td>{{ ref30.new_users }}</td>
+
+            </tr>
+            <tr>
+
+              <td>Avg Duration</td>
+              <td>{{ ref30.m_avg_session_duration }}</td>
+              <td>{{ ref30.f_avg_session_duration }}</td>
+              <td>{{ ref30.avg_session_duration }}</td>
+
+            </tr>
+            <tr>
+
+              <td>Pages / Session</td>
+              <td>{{ ref30.m_page_views }}</td>
+              <td>{{ ref30.f_page_views }}</td>
+              <td>{{ ref30.page_views }}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<br>
+
+<!--LIFETIME DATA -->
+
+<div class="card">
+  <h4 class="card-header" align="center">Lifetime Report</h4>
+  <div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Lifetime</b> </font>
+            <!-- insert canvas -->
+            <canvas id="lifetime"></canvas>
+            <br><span class="badge badge-success">Insights</span>
+          <table class="table table-bordered table-inverse">
+            <thead>
+              <tr>
+                <th class="bg-danger">Male</th>
+                <th class="bg-dark">{{ male_totallt }}% </th>
+                <th class="bg-danger">Female</th>
+                <th class="bg-dark">{{ female_totallt }}%</th>
+              </tr>
+            </thead>
+          </table>
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>M</th>
+              <th>F</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>Total Users</td>
+              <td>{{ reflt.m_total_users }}</td>
+              <td>{{ reflt.f_total_users }}</td>
+              <td>{{ reflt.total_users }}</td>
+
+            </tr>
+            <tr>
+
+              <td>New Users</td>
+              <td>{{ reflt.m_new_users }}</td>
+              <td>{{ reflt.f_new_users }}</td>
+              <td>{{ reflt.new_users }}</td>
+
+            </tr>
+            <tr>
+
+              <td>Avg Duration</td>
+              <td>{{ reflt.m_avg_session_duration }}</td>
+              <td>{{ reflt.f_avg_session_duration }}</td>
+              <td>{{ reflt.avg_session_duration }}</td>
+
+            </tr>
+            <tr>
+
+              <td>Pages / Session</td>
+              <td>{{ reflt.m_page_views }}</td>
+              <td>{{ reflt.f_page_views }}</td>
+              <td>{{ reflt.page_views }}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+      var ctx = document.getElementById('7days').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Male','Female'],
+          datasets: [{
+            label: 'apples',
+            data: [{{ref7.m_total_sessions}}, {{ ref7.f_total_sessions }}  ],
+            backgroundColor: ['rgb(0, 255, 0)','rgb(0, 0, 255)']
+          }]
+        }
+      });
+
+</script>
+
+<script>
+
+      var ctx = document.getElementById('14days').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Male','Female'],
+          datasets: [{
+
+            data: [{{ref14.m_total_sessions}}, {{ ref14.f_total_sessions }}  ],
+            backgroundColor: ['rgb(0, 255, 0)','rgb(0, 0, 255)']
+          }]
+        }
+      });
+
+</script>
+
+<!-- MONTHLY REPORT -->
+
+<script>
+
+      var ctx = document.getElementById('lastmonth').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Male','Female'],
+          datasets: [{
+            label: 'apples',
+            data: [{{reflm.m_total_sessions}}, {{ reflm.f_total_sessions }}  ],
+            backgroundColor: ['rgb(0, 255, 0)','rgb(0, 0, 255)']
+          }]
+        }
+      });
+
+</script>
+
+<script>
+
+      var ctx = document.getElementById('thismonth').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Male','Female'],
+          datasets: [{
+
+            data: [{{ref30.m_total_sessions}}, {{ ref30.f_total_sessions }}],
+            backgroundColor: ['rgb(0, 255, 0)','rgb(0, 0, 255)']
+          }]
+        }
+      });
+
+</script>
+
+
+<!-- LIFETIME WORTH DATA -->
+
+<script>
+
+      var ctx = document.getElementById('lifetime').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Male','Female'],
+          datasets: [{
+
+            data: [{{reflt.m_total_sessions}}, {{ reflt.f_total_sessions }}],
+            backgroundColor: ['rgb(0, 255, 0)','rgb(0, 0, 255)']
+          }]
+        }
+      });
+
+</script>
+
+{% endblock %}

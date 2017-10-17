@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<h3 class="display-4" align="center">Dysco App</h3>
+
+<br>
+<!-- cards -->
+
+<div class="card-deck">
+  <div class="card">
+
+    <div class="card-body">
+
+      <h4 class="card-title"><i class="fa fa-university" aria-hidden="true"></i> App users</h4>
+      <p class="card-text">Statistic on app users from various industries and interest groups</p>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'app-users' %}">
+      <button type="button" class="btn btn-warning">View</button>
+    </a>
+    </div>
+  </div>
+    <br>
+  <div class="card">
+
+    <div class="card-body">
+      <h4 class="card-title"><i class="fa fa-venus-mars " aria-hidden="true"></i> Gender</h4>
+      <p class="card-text">Dysco app visitors segregated by Male and Female</p>
+    </div>
+    <div class="card-footer">
+      <button type="button" class="btn btn-warning">View</button>
+    </div>
+  </div>
+    <br>
+  <div class="card">
+
+    <div class="card-body">
+      <h4 class="card-title"><i class="fa fa-compass" aria-hidden="true"></i> Location</h4>
+      <p class="card-text">Visitors on Dysco app from top 10 cities across India</p>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'app-location' %}">
+      <button type="button" class="btn btn-warning">View</button>
+      </a>
+    </div>
+  </div>
+</div>
+<br>
+<div class="card-deck">
+  <div class="card">
+
+    <div class="card-body">
+      <h4 class="card-title"><i class="fa fa-heart-o" aria-hidden="true"></i> Interest & Industry</h4>
+      <p class="card-text">What are the specific interest groups that our app users categorise unto</p>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'app-interest' %}">
+      <button type="button" class="btn btn-warning">View</button>
+      </a>
+    </div>
+  </div>
+    <br>
+  <div class="card">
+
+    <div class="card-body">
+
+      <h4 class="card-title"><i class="fa fa-users" aria-hidden="true"></i> Age group</h4>
+      <p class="card-text">What are the different age group of our audience who are using Dysco App</p>
+    </div>
+    <div class="card-footer">
+      <button type="button" class="btn btn-warning">View</button>
+    </div>
+  </div>
+    <br>
+   <div class="card">
+
+    <div class="card-body">
+      <h4 class="card-title"><i class="fa fa-clone" aria-hidden="true"></i> Screens</h4>
+      <p class="card-text">Drilldown by Screen, amount of time spent on each screens</p>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'app-screens' %}">
+      <button type="button" class="btn btn-warning">View</button>
+      </a>
+    </div>
+  </div>
+
+</div>
+<br>
+
+<!-- row 3-->
+
+<div class="card-deck">
+  <div class="card">
+
+    <div class="card-body">
+      <h4 class="card-title"><i class="fa fa-spin fa-star-half-o " aria-hidden="true"></i> Trending Profiles</h4>
+      <p class="card-text">Find out which profiles are trending on Dysco App</p>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'app-trending' %}">
+      <button type="button" class="btn btn-warning">View</button>
+      </a>
+    </div>
+  </div>
+    <br>
+
+
+</div>
+<!-- cards end -->
+
+{% endblock %}

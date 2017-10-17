@@ -1,0 +1,525 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+
+<div class="card">
+  <h4 class="card-header" align="center"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Article wise</h4>
+  <div class="card-body">
+    <h3 class="card-title">What to take away from this report</h3>
+      <p class="card-text">This report shows the Article wise distribution of the audience who have visited <b>Dysco Blog.</b> Here you will find the data about various Articles across last week and current week, last month and current month and lifetime distribution across top 5 Articles</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> This report helps to project the diversity across audience who have visited various Articles on the Blog</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> The <span class="badge badge-success">Insights</span> tab gives a detailed information regarding various aspects related to the Blog</p>
+
+  </div>
+</div>
+<br>
+
+<!--WEEKLY REPORT -->
+<div class="card">
+  <h4 class="card-header" align="center">Weekly Report</h4>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Last 7 days</b> </font>
+            <!-- insert canvas -->
+            <canvas id="last7days"></canvas>
+          <br><span class="badge badge-success">Insights</span>
+
+
+
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Article</th>
+              <th>users</th>
+              <th>PageViews</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+
+              <td>{{dict7.1.name}}</td>
+              <td>{{ dict7.1.users }}</td>
+              <td>{{ dict7.1.pageviews }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict7.2.name}}</td>
+              <td>{{ dict7.2.users }}</td>
+              <td>{{ dict7.2.pageviews }}</td>
+
+
+            </tr>
+            <tr >
+
+              <td>{{dict7.3.name}}</td>
+              <td>{{ dict7.3.users }}</td>
+              <td>{{ dict7.3.pageviews }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict7.4.name}}</td>
+              <td>{{ dict7.4.users }}</td>
+              <td>{{ dict7.4.pageviews }}</td>
+
+
+            </tr>
+            <tr >
+
+              <td>{{dict7.5.name}}</td>
+              <td>{{ dict7.5.users }}</td>
+              <td>{{ dict7.5.pageviews }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="blue"><b class="card-title">Last 14 Days</b></font>
+            <!-- insert canvas -->
+          <canvas id="last14days"></canvas>
+          <br><span class="badge badge-success">Insights</span>
+          <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Article</th>
+              <th>users</th>
+              <th>PageViews</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+
+              <td>{{dict14.1.name}}</td>
+              <td>{{ dict14.1.users }}</td>
+              <td>{{ dict14.1.pageviews }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict14.2.name}}</td>
+              <td>{{ dict14.2.users }}</td>
+              <td>{{ dict14.2.pageviews }}</td>
+
+
+            </tr>
+            <tr >
+
+              <td>{{dict14.3.name}}</td>
+              <td>{{ dict14.3.users }}</td>
+              <td>{{ dict14.3.pageviews }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict14.4.name}}</td>
+              <td>{{ dict14.4.users }}</td>
+              <td>{{ dict14.4.pageviews }}</td>
+
+
+            </tr>
+            <tr >
+
+              <td>{{dict14.5.name}}</td>
+              <td>{{ dict14.5.users }}</td>
+              <td>{{ dict14.5.pageviews }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<br>
+
+
+<!-- MONTHLY REPORT -->
+
+<div class="card">
+  <h4 class="card-header" align="center">Monthly Report</h4>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Last Month</b> </font>
+            <!-- insert canvas -->
+            <canvas id="thismonth"></canvas>
+          <br><span class="badge badge-success">Insights</span>
+
+
+
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Article</th>
+              <th>users</th>
+              <th>PageViews</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+
+              <td>{{dictlm.1.name}}</td>
+              <td>{{ dictlm.1.users }}</td>
+              <td>{{ dictlm.1.pageviews }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlm.2.name}}</td>
+              <td>{{ dictlm.2.users }}</td>
+              <td>{{ dictlm.2.pageviews }}</td>
+
+
+            </tr>
+            <tr >
+
+              <td>{{dictlm.3.name}}</td>
+              <td>{{ dictlm.3.users }}</td>
+              <td>{{ dictlm.3.pageviews }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlm.4.name}}</td>
+              <td>{{ dictlm.4.users }}</td>
+              <td>{{ dictlm.4.pageviews }}</td>
+
+
+            </tr>
+            <tr >
+
+              <td>{{dictlm.5.name}}</td>
+              <td>{{ dictlm.5.users }}</td>
+              <td>{{ dictlm.5.pageviews }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="blue"><b class="card-title">This Month</b></font>
+            <!-- insert canvas -->
+            <canvas id="lastmonth"></canvas>
+          <br><span class="badge badge-success">Insights</span>
+          <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Article</th>
+              <th>users</th>
+              <th>PageViews</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+
+              <td>{{dicttm.1.name}}</td>
+              <td>{{ dicttm.1.users }}</td>
+              <td>{{ dicttm.1.pageviews }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dicttm.2.name}}</td>
+              <td>{{ dicttm.2.users }}</td>
+              <td>{{ dicttm.2.pageviews }}</td>
+
+
+            </tr>
+            <tr >
+
+              <td>{{dicttm.3.name}}</td>
+              <td>{{ dicttm.3.users }}</td>
+              <td>{{ dicttm.3.pageviews }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dicttm.4.name}}</td>
+              <td>{{ dicttm.4.users }}</td>
+              <td>{{ dicttm.4.pageviews }}</td>
+
+
+            </tr>
+            <tr >
+
+              <td>{{dicttm.5.name}}</td>
+              <td>{{ dicttm.5.users }}</td>
+              <td>{{ dicttm.5.pageviews }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<br>
+<!-- LIFETIME REPORT -->
+
+<div class="card">
+  <h4 class="card-header" align="center">Lifetime Report</h4>
+  <div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Lifetime</b> </font>
+            <!-- insert canvas -->
+            <canvas id="lifetime"></canvas>
+            <br><span class="badge badge-success">Insights</span>
+
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Article</th>
+              <th>users</th>
+              <th>PageViews</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+
+              <td>{{dictlt.1.name}}</td>
+              <td>{{ dictlt.1.users }}</td>
+              <td>{{ dictlt.1.pageviews }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlt.2.name}}</td>
+              <td>{{ dictlt.2.users }}</td>
+              <td>{{ dictlt.2.pageviews }}</td>
+
+
+            </tr>
+            <tr >
+
+              <td>{{dictlt.3.name}}</td>
+              <td>{{ dictlt.3.users }}</td>
+              <td>{{ dictlt.3.pageviews }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlt.4.name}}</td>
+              <td>{{ dictlt.4.users }}</td>
+              <td>{{ dictlt.4.pageviews }}</td>
+
+
+            </tr>
+            <tr >
+
+              <td>{{dictlt.5.name}}</td>
+              <td>{{ dictlt.5.users }}</td>
+              <td>{{ dictlt.5.pageviews }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--JAVASCRIPT -->
+
+
+<!-- WEEKLY -->
+
+
+<script>
+
+
+
+      var ctx = document.getElementById('last7days').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ['{{ dict7.1.name }}','{{ dict7.2.name }}','{{ dict7.3.name }}','{{ dict7.4.name }}','{{ dict7.5.name }}'],
+          datasets: [{
+            label : 'Sessions across Cities',
+            data: [{{ dict7.1.pageviews }},{{ dict7.2.pageviews }},{{ dict7.3.pageviews }},{{ dict7.4.pageviews }},{{ dict7.5.pageviews }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+            ]
+          }]
+        }
+      });
+
+</script>
+
+<script>
+
+
+
+      var ctx = document.getElementById('last14days').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ['{{ dict14.1.name }}','{{ dict14.2.name }}','{{ dict14.3.name }}','{{ dict14.4.name }}','{{ dict14.5.name }}'],
+          datasets: [{
+            label : 'Sessions across Cities',
+            data: [{{ dict14.1.pageviews }},{{ dict14.2.pageviews }},{{ dict14.3.pageviews }},{{ dict14.4.pageviews }},{{ dict14.5.pageviews }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+            ]
+          }]
+        }
+      });
+
+</script>
+
+
+<!-- MONTHLY -->
+
+
+<script>
+
+
+
+      var ctx = document.getElementById('lastmonth').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ['{{ dictlm.1.name }}','{{ dictlm.2.name }}','{{ dictlm.3.name }}','{{ dictlm.4.name }}','{{ dictlm.5.name }}'],
+          datasets: [{
+            label : 'Sessions across Cities',
+            data: [{{ dictlm.1.pageviews }},{{ dictlm.2.pageviews }},{{ dictlm.3.pageviews }},{{ dictlm.4.pageviews }},{{ dictlm.5.pageviews }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+            ]
+          }]
+        }
+      });
+
+</script>
+
+<script>
+
+
+
+      var ctx = document.getElementById('thismonth').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ['{{ dicttm.1.name }}','{{ dicttm.2.name }}','{{ dicttm.3.name }}','{{ dicttm.4.name }}','{{ dicttm.5.name }}'],
+          datasets: [{
+            label : 'Sessions across Cities',
+            data: [{{ dicttm.1.pageviews }},{{ dicttm.2.pageviews }},{{ dicttm.3.pageviews }},{{ dicttm.4.pageviews }},{{ dicttm.5.pageviews }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+            ]
+          }]
+        }
+      });
+
+</script>
+
+
+
+
+<!-- LIFETIME -->
+
+
+<script>
+
+
+
+      var ctx = document.getElementById('lifetime').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['{{ dictlt.1.name }}','{{ dictlt.2.name }}','{{ dictlt.3.name }}','{{ dictlt.4.name }}','{{ dictlt.5.name }}'],
+          datasets: [{
+            label : 'Sessions across Cities',
+            data: [{{ dictlt.1.pageviews }},{{ dictlt.2.pageviews }},{{ dictlt.3.pageviews }},{{ dictlt.4.pageviews }},{{ dictlt.5.pageviews }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+            ]
+          }]
+        }
+      });
+
+</script>
+
+{% endblock %}

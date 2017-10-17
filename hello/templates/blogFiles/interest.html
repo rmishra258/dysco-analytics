@@ -1,0 +1,379 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+
+<div class="card">
+  <h4 class="card-header" align="center"><i class="fa fa-heart" aria-hidden="true"></i> Interest Groups</h4>
+  <div class="card-body">
+    <h3 class="card-title">What to take away from this report</h3>
+      <p class="card-text">This report shows the Intreset wise distribution of the audience who have visited <b>Dysco Blog.</b> Here you will find the data about various Interest groups across last week and current week, last month and current month and lifetime distribution across top 5 interest groups</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> This report helps to project the diversity across audience belonging to different interest groups who have visited the Blog</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> The <span class="badge badge-success">Insights</span> tab gives a detailed information regarding various aspects related to the Blog</p>
+
+  </div>
+</div>
+<br>
+
+<!--WEEKLY REPORT -->
+<div class="card">
+  <h4 class="card-header" align="center">Weekly Report</h4>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Last 7 days</b> </font>
+            <!-- insert canvas -->
+
+          <br><span class="badge badge-success">Insights</span>
+
+
+
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Interest</th>
+              <th>Sessions</th>
+              <th>Duration</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>{{dict7.1.name}}</td>
+              <td>{{ dict7.1.sessions }}</td>
+              <td>{{ dict7.1.avgsd }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict7.2.name}}</td>
+              <td>{{ dict7.2.sessions }}</td>
+              <td>{{ dict7.2.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict7.3.name}}</td>
+              <td>{{ dict7.3.sessions }}</td>
+              <td>{{ dict7.3.avgsd }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict7.4.name}}</td>
+              <td>{{ dict7.4.sessions }}</td>
+              <td>{{ dict7.4.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict7.5.name}}</td>
+              <td>{{ dict7.5.sessions }}</td>
+              <td>{{ dict7.5.avgsd }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="blue"><b class="card-title">Last 14 Days</b></font>
+            <!-- insert canvas -->
+
+          <br><span class="badge badge-success">Insights</span>
+          <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Interest</th>
+              <th>Sessions</th>
+              <th>Duration</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>{{dict14.1.name}}</td>
+              <td>{{ dict14.1.sessions }}</td>
+              <td>{{ dict14.1.avgsd }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict14.2.name}}</td>
+              <td>{{ dict14.2.sessions }}</td>
+              <td>{{ dict14.2.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict14.3.name}}</td>
+              <td>{{ dict14.3.sessions }}</td>
+              <td>{{ dict14.3.avgsd }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict14.4.name}}</td>
+              <td>{{ dict14.4.sessions }}</td>
+              <td>{{ dict14.4.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict14.5.name}}</td>
+              <td>{{ dict14.5.sessions }}</td>
+              <td>{{ dict14.5.avgsd }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<br>
+
+
+<!-- MONTHLY REPORT -->
+
+<div class="card">
+  <h4 class="card-header" align="center">Monthly Report</h4>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Last Month</b> </font>
+            <!-- insert canvas -->
+
+          <br><span class="badge badge-success">Insights</span>
+
+
+
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Interest</th>
+              <th>Sessions</th>
+              <th>Duration</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>{{dictlm.1.name}}</td>
+              <td>{{ dictlm.1.sessions }}</td>
+              <td>{{ dictlm.1.avgsd }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlm.2.name}}</td>
+              <td>{{ dictlm.2.sessions }}</td>
+              <td>{{ dictlm.2.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlm.3.name}}</td>
+              <td>{{ dictlm.3.sessions }}</td>
+              <td>{{ dictlm.3.avgsd }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlm.4.name}}</td>
+              <td>{{ dictlm.4.sessions }}</td>
+              <td>{{ dictlm.4.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlm.5.name}}</td>
+              <td>{{ dictlm.5.sessions }}</td>
+              <td>{{ dictlm.5.avgsd }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="blue"><b class="card-title">This Month</b></font>
+            <!-- insert canvas -->
+
+          <br><span class="badge badge-success">Insights</span>
+          <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Interest</th>
+              <th>Sessions</th>
+              <th>Duration</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>{{dicttm.1.name}}</td>
+              <td>{{ dicttm.1.sessions }}</td>
+              <td>{{ dicttm.1.avgsd }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dicttm.2.name}}</td>
+              <td>{{ dicttm.2.sessions }}</td>
+              <td>{{ dicttm.2.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dicttm.3.name}}</td>
+              <td>{{ dicttm.3.sessions }}</td>
+              <td>{{ dicttm.3.avgsd }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dicttm.4.name}}</td>
+              <td>{{ dicttm.4.sessions }}</td>
+              <td>{{ dicttm.4.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dicttm.5.name}}</td>
+              <td>{{ dicttm.5.sessions }}</td>
+              <td>{{ dicttm.5.avgsd }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<br>
+<!-- LIFETIME REPORT -->
+
+<div class="card">
+  <h4 class="card-header" align="center">Lifetime Report</h4>
+  <div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Lifetime</b> </font>
+            <!-- insert canvas -->
+
+            <br><span class="badge badge-success">Insights</span>
+
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Interest</th>
+              <th>Sessions</th>
+              <th>Duration</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>{{dictlt.1.name}}</td>
+              <td>{{ dictlt.1.sessions }}</td>
+              <td>{{ dictlt.1.avgsd }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlt.2.name}}</td>
+              <td>{{ dictlt.2.sessions }}</td>
+              <td>{{ dictlt.2.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlt.3.name}}</td>
+              <td>{{ dictlt.3.sessions }}</td>
+              <td>{{ dictlt.3.avgsd }}</td>
+
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlt.4.name}}</td>
+              <td>{{ dictlt.4.sessions }}</td>
+              <td>{{ dictlt.4.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlt.5.name}}</td>
+              <td>{{ dictlt.5.sessions }}</td>
+              <td>{{ dictlt.5.avgsd }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+{% endblock %}

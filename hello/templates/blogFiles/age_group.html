@@ -1,0 +1,469 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="card">
+  <h4 class="card-header" align="center"><i class="fa fa-users" aria-hidden="true"></i> Age group data</h4>
+  <div class="card-body">
+    <h3 class="card-title">What to take away from this report</h3>
+      <p class="card-text">This report shows the Age distribution of the audience who have visited <b>Dysco Blog.</b> Here you will find the comparision between various Age groups of people across last week and current week, last month and current month and lifetime distribution across all 6 age groups</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> This report helps to project the diversity across audience of different Age-groups who have visited the Blog</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> The <span class="badge badge-success">Insights</span> tab gives a detailed information regarding various aspects related to the Blog</p>
+
+  </div>
+</div>
+<br>
+
+
+
+<!-- WEEKLY REPORT -->
+<div class="card">
+  <h4 class="card-header" align="center">Weekly Report</h4>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Last 7 Days</b> </font>
+            <!-- insert canvas -->
+          <canvas id="7days"></canvas>
+          <br><span class="badge badge-success">Insights</span>
+
+
+
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>18+</th>
+              <th>25+</th>
+              <th>35+</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>Total Users</td>
+              <td>{{ dict7.age.18.users }}</td>
+              <td>{{ dict7.age.25.users }}</td>
+              <td>{{ dict7.age.35.users }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>New Users</td>
+              <td>{{ dict7.age.18.newusers }}</td>
+              <td>{{ dict7.age.25.newusers }}</td>
+              <td>{{ dict7.age.35.newusers }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>Avg Duration</td>
+              <td>{{ dict7.age.18.avgsd }}</td>
+              <td>{{ dict7.age.25.avgsd }}</td>
+              <td>{{ dict7.age.35.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>Pages / Session</td>
+              <td>{{ dict7.age.18.pgvps }}</td>
+              <td>{{ dict7.age.25.pgvps }}</td>
+              <td>{{ dict7.age.35.pgvps }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="blue"><b class="card-title">Last 14 days</b></font>
+            <!-- insert canvas -->
+          <canvas id="14days"> </canvas>
+          <br><span class="badge badge-success">Insights</span>
+          <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>18+</th>
+              <th>25+</th>
+              <th>35+</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>Total Users</td>
+              <td>{{ dict14.age.18.users }}</td>
+              <td>{{ dict14.age.25.users }}</td>
+              <td>{{ dict14.age.35.users }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>New Users</td>
+              <td>{{ dict14.age.18.newusers }}</td>
+              <td>{{ dict14.age.25.newusers }}</td>
+              <td>{{ dict14.age.35.newusers }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>Avg Duration</td>
+              <td>{{ dict14.age.18.avgsd }}</td>
+              <td>{{ dict14.age.25.avgsd }}</td>
+              <td>{{ dict14.age.35.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>Pages / Session</td>
+              <td>{{ dict14.age.18.pgvps }}</td>
+              <td>{{ dict14.age.25.pgvps }}</td>
+              <td>{{ dict14.age.35.pgvps }}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<br>
+<!-- MONTHLY REPORT -->
+<div class="card">
+  <h4 class="card-header" align="center">Monthly Report</h4>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Last Month</b> </font>
+            <!-- insert canvas -->
+          <canvas id="lastmonth"></canvas>
+          <br><span class="badge badge-success">Insights</span>
+
+
+
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>18+</th>
+              <th>25+</th>
+              <th>35+</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>Total Users</td>
+              <td>{{ dictlm.age.18.users }}</td>
+              <td>{{ dictlm.age.25.users }}</td>
+              <td>{{ dictlm.age.35.users }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>New Users</td>
+              <td>{{ dictlm.age.18.newusers }}</td>
+              <td>{{ dictlm.age.25.newusers }}</td>
+              <td>{{ dictlm.age.35.newusers }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>Avg Duration</td>
+              <td>{{ dictlm.age.18.avgsd }}</td>
+              <td>{{ dictlm.age.25.avgsd }}</td>
+              <td>{{ dictlm.age.35.avgsd }}</td>
+
+            </tr>
+            <tr>
+
+              <td>Pages / Session</td>
+              <td>{{ dictlm.age.18.pgvps }}</td>
+              <td>{{ dictlm.age.25.pgvps }}</td>
+              <td>{{ dictlm.age.35.pgvps }}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="blue"><b class="card-title">This Month</b></font>
+            <!-- insert canvas -->
+          <canvas id="thismonth"> </canvas>
+          <br><span class="badge badge-success">Insights</span>
+          <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>18+</th>
+              <th>25+</th>
+              <th>35+</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>Total Users</td>
+              <td>{{ dicttm.age.18.users }}</td>
+              <td>{{ dicttm.age.25.users }}</td>
+              <td>{{ dicttm.age.35.users }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>New Users</td>
+              <td>{{ dicttm.age.18.newusers }}</td>
+              <td>{{ dicttm.age.25.newusers }}</td>
+              <td>{{ dicttm.age.35.newusers }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>Avg Duration</td>
+              <td>{{ dicttm.age.18.avgsd }}</td>
+              <td>{{ dicttm.age.25.avgsd }}</td>
+              <td>{{ dicttm.age.35.avgsd }}</td>
+
+            </tr>
+            <tr>
+
+              <td>Pages / Session</td>
+              <td>{{ dicttm.age.18.pgvps }}</td>
+              <td>{{ dicttm.age.25.pgvps }}</td>
+              <td>{{ dicttm.age.35.pgvps }}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<br>
+
+<!-- LIFETIME REPORT -->
+
+<div class="card">
+  <h4 class="card-header" align="center">Lifetime Report</h4>
+  <div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Lifetime</b> </font>
+            <!-- insert canvas -->
+            <canvas id="lifetime"></canvas>
+            <br><span class="badge badge-success">Insights</span>
+
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>18+</th>
+              <th>25+</th>
+              <th>35+</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>Total Users</td>
+              <td>{{ dictlt.age.18.users }}</td>
+              <td>{{ dictlt.age.25.users }}</td>
+              <td>{{ dictlt.age.35.users }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>New Users</td>
+              <td>{{ dictlt.age.18.newusers }}</td>
+              <td>{{ dictlt.age.25.newusers }}</td>
+              <td>{{ dictlt.age.35.newusers }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>Avg Duration</td>
+              <td>{{ dictlt.age.18.avgsd }}</td>
+              <td>{{ dictlt.age.25.avgsd }}</td>
+              <td>{{ dictlt.age.35.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>Pages / Session</td>
+              <td>{{ dictlt.age.18.pgvps }}</td>
+              <td>{{ dictlt.age.25.pgvps }}</td>
+              <td>{{ dictlt.age.35.pgvps }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- JAVASCRIPT -->
+
+
+<!-- WEEK -->
+<script>
+
+
+
+      var ctx = document.getElementById('7days').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['18-24', '25-34', '35-44'],
+          datasets: [{
+            label : 'Sessions across Age groups',
+            data: [{{ dict7.age.18.sessions }},{{ dict7.age.25.sessions }},{{ dict7.age.35.sessions }}],
+            backgroundColor: [
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+            ]
+          }]
+        }
+      });
+
+</script>
+
+<script>
+
+
+
+      var ctx = document.getElementById('14days').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['18-24', '25-34', '35-44'],
+          datasets: [{
+            label : 'Sessions across Age groups',
+            data: [{{ dict14.age.18.sessions }},{{ dict14.age.25.sessions }},{{ dict14.age.35.sessions }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+            ]
+            }]
+        }
+      });
+
+</script>
+
+
+<!--MONTH -->
+
+<script>
+
+
+
+      var ctx = document.getElementById('lastmonth').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['18-24', '25-34', '35-44'],
+          datasets: [{
+            label : 'Sessions across Age groups',
+            data: [{{ dictlm.age.18.sessions }},{{ dictlm.age.25.sessions }},{{ dictlm.age.35.sessions }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+            ]
+          }]
+        }
+      });
+
+</script>
+
+<script>
+
+
+
+      var ctx = document.getElementById('thismonth').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['18-24', '25-34', '35-44'],
+          datasets: [{
+            label : 'Sessions across Age groups',
+            data: [{{ dicttm.age.18.sessions }},{{ dicttm.age.25.sessions }},{{ dicttm.age.35.sessions }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+            ]
+          }]
+        }
+      });
+
+</script>
+
+<!-- LIFETIME -->
+
+
+<script>
+
+
+
+      var ctx = document.getElementById('lifetime').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['18-24', '25-34', '35-44'],
+          datasets: [{
+            label : 'Sessions across Age groups',
+            data: [{{ dictlt.age.18.sessions }},{{ dictlt.age.25.sessions }},{{ dictlt.age.35.sessions }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+            ]
+          }]
+        }
+      });
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="card">
+  <h4 class="card-header" align="center"><i class="fa fa-clone" aria-hidden="true"></i> Screen data</h4>
+  <div class="card-body">
+    <h3 class="card-title">What to take away from this report</h3>
+      <p class="card-text">This report shows the Screen statistics of the <b>Dysco App.</b> Here you will find the data about various Screens across last 14 days, last 30 ays  and lifetime distribution across top 5 Screens</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> This report helps to project the diversity across different screens that was accessed</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> The <span class="badge badge-success">Insights</span> tab gives a detailed information regarding various aspects related to the App</p>
+
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+          <h4 class="card-title">Last 14 Days <i class="fa fa-apple" aria-hidden="true"></i></h4>
+        <table class="table table-sm">
+  <thead>
+    <tr>
+
+      <th>Screen Name</th>
+      <th>Screen Views</th>
+      <th>Avg Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><font color="blue">{{ dict14.1.name }}</font></td>
+      <td>{{ dict14.1.sessions }}</td>
+      <td>{{ dict14.1.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ dict14.2.name }}</font></td>
+      <td>{{ dict14.2.sessions }}</td>
+      <td>{{ dict14.2.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ dict14.3.name }}</font></td>
+      <td>{{ dict14.3.sessions }}</td>
+      <td>{{ dict14.3.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ dict14.4.name }}</font></td>
+      <td>{{ dict14.4.sessions }}</td>
+      <td>{{ dict14.4.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ dict14.5.name }}</font></td>
+      <td>{{ dict14.5.sessions }}</td>
+      <td>{{ dict14.5.avgsd }}</td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+          <h4 class="card-title">Last 14 Days <i class="fa fa-android" aria-hidden="true"></i></h4>
+        <table class="table table-sm">
+  <thead>
+    <tr>
+
+      <th>Screen Name</th>
+      <th>Screen Views</th>
+      <th>Avg Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><font color="blue">{{ a_dict14.1.name }}</font></td>
+      <td>{{ a_dict14.1.sessions }}</td>
+      <td>{{ a_dict14.1.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ a_dict14.2.name }}</font></td>
+      <td>{{ a_dict14.2.sessions }}</td>
+      <td>{{ a_dict14.2.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ a_dict14.3.name }}</font></td>
+      <td>{{ a_dict14.3.sessions }}</td>
+      <td>{{ a_dict14.3.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ a_dict14.4.name }}</font></td>
+      <td>{{ a_dict14.4.sessions }}</td>
+      <td>{{ a_dict14.4.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ a_dict14.5.name }}</font></td>
+      <td>{{ a_dict14.5.sessions }}</td>
+      <td>{{ a_dict14.5.avgsd }}</td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+          <h4 class="card-title">Lifetime <i class="fa fa-apple" aria-hidden="true"></i></h4>
+        <table class="table table-sm">
+  <thead>
+    <tr>
+
+      <th>Screen Name</th>
+      <th>Screen Views</th>
+      <th>Avg Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><font color="blue">{{ dictlt.1.name }}</font></td>
+      <td>{{ dictlt.1.sessions }}</td>
+      <td>{{ dictlt.1.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ dictlt.2.name }}</font></td>
+      <td>{{ dictlt.2.sessions }}</td>
+      <td>{{ dictlt.2.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ dictlt.3.name }}</font></td>
+      <td>{{ dictlt.3.sessions }}</td>
+      <td>{{ dictlt.3.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ dictlt.4.name }}</font></td>
+      <td>{{ dictlt.4.sessions }}</td>
+      <td>{{ dictlt.4.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ dictlt.5.name }}</font></td>
+      <td>{{ dictlt.5.sessions }}</td>
+      <td>{{ dictlt.5.avgsd }}</td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+          <h4 class="card-title">Lifetime <i class="fa fa-android" aria-hidden="true"></i></h4>
+        <table class="table table-sm">
+  <thead>
+    <tr>
+
+      <th>Screen Name</th>
+      <th>Screen Views</th>
+      <th>Avg Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><font color="blue">{{ a_dictlt.1.name }}</font></td>
+      <td>{{ a_dictlt.1.sessions }}</td>
+      <td>{{ a_dictlt.1.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ a_dictlt.2.name }}</font></td>
+      <td>{{ a_dictlt.2.sessions }}</td>
+      <td>{{ a_dictlt.2.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ a_dictlt.3.name }}</font></td>
+      <td>{{ a_dictlt.3.sessions }}</td>
+      <td>{{ a_dictlt.3.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ a_dictlt.4.name }}</font></td>
+      <td>{{ a_dictlt.4.sessions }}</td>
+      <td>{{ a_dictlt.4.avgsd }}</td>
+    </tr>
+    <tr>
+      <td><font color="blue">{{ a_dictlt.5.name }}</font></td>
+      <td>{{ a_dictlt.5.sessions }}</td>
+      <td>{{ a_dictlt.5.avgsd }}</td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

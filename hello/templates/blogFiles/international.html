@@ -1,0 +1,543 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+
+<div class="card">
+  <h4 class="card-header" align="center"><i class="fa fa-globe" aria-hidden="true"></i> International data</h4>
+  <div class="card-body">
+    <h3 class="card-title">What to take away from this report</h3>
+      <p class="card-text">This report shows the <span> INTERNATIONAL </span> Location distribution of the audience who have visited <b>Dysco Blog.</b> Here you will find the data about various Locations across last week and current week, last month and current month and lifetime distribution across top 5 Countries</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> This report helps to project the diversity across audience of different Countries who have visited the Blog except India</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> The <span class="badge badge-success">Insights</span> tab gives a detailed information regarding various aspects related to the Blog</p>
+
+  </div>
+</div>
+<br>
+
+
+<!-- WEEKLY REPORT -->
+<div class="card">
+  <h4 class="card-header" align="center">Weekly Report</h4>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Last 7 Days</b> </font>
+            <!-- insert canvas -->
+          <canvas id="7days"></canvas>
+          <br><span class="badge badge-success">Insights</span>
+
+
+
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Users</th>
+              <th>New users</th>
+              <th>Secs</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>{{dict7.1.name}}</td>
+              <td>{{ dict7.1.users }}</td>
+              <td>{{ dict7.1.newusers }}</td>
+              <td>{{ dict7.1.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict7.2.name}}</td>
+              <td>{{ dict7.2.users }}</td>
+              <td>{{ dict7.2.newusers }}</td>
+              <td>{{ dict7.2.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict7.3.name}}</td>
+              <td>{{ dict7.3.users }}</td>
+              <td>{{ dict7.3.newusers }}</td>
+              <td>{{ dict7.3.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict7.4.name}}</td>
+              <td>{{ dict7.4.users }}</td>
+              <td>{{ dict7.4.newusers }}</td>
+              <td>{{ dict7.4.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict7.5.name}}</td>
+              <td>{{ dict7.5.users }}</td>
+              <td>{{ dict7.5.newusers }}</td>
+              <td>{{ dict7.5.avgsd }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="blue"><b class="card-title">Last 14 days</b></font>
+            <!-- insert canvas -->
+          <canvas id="14days"> </canvas>
+          <br><span class="badge badge-success">Insights</span>
+          <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Users</th>
+              <th>New users</th>
+              <th>Secs</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>{{dict14.1.name}}</td>
+              <td>{{ dict14.1.users }}</td>
+              <td>{{ dict14.1.newusers }}</td>
+              <td>{{ dict14.1.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict14.2.name}}</td>
+              <td>{{ dict14.2.users }}</td>
+              <td>{{ dict14.2.newusers }}</td>
+              <td>{{ dict14.2.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict14.3.name}}</td>
+              <td>{{ dict14.3.users }}</td>
+              <td>{{ dict14.3.newusers }}</td>
+              <td>{{ dict14.3.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict14.4.name}}</td>
+              <td>{{ dict14.4.users }}</td>
+              <td>{{ dict14.4.newusers }}</td>
+              <td>{{ dict14.4.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dict14.5.name}}</td>
+              <td>{{ dict14.5.users }}</td>
+              <td>{{ dict14.5.newusers }}</td>
+              <td>{{ dict14.5.avgsd }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<br>
+<!-- MONTHLY REPORT -->
+
+<!-- WEEKLY REPORT -->
+<div class="card">
+  <h4 class="card-header" align="center">Monthly Report</h4>
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Last Month</b> </font>
+            <!-- insert canvas -->
+          <canvas id="lastmonth"></canvas>
+          <br><span class="badge badge-success">Insights</span>
+
+
+
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Users</th>
+              <th>New users</th>
+              <th>Secs</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>{{dictlm.1.name}}</td>
+              <td>{{ dictlm.1.users }}</td>
+              <td>{{ dictlm.1.newusers }}</td>
+              <td>{{ dictlm.1.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlm.2.name}}</td>
+              <td>{{ dictlm.2.users }}</td>
+              <td>{{ dictlm.2.newusers }}</td>
+              <td>{{ dictlm.2.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlm.3.name}}</td>
+              <td>{{ dictlm.3.users }}</td>
+              <td>{{ dictlm.3.newusers }}</td>
+              <td>{{ dictlm.3.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlm.4.name}}</td>
+              <td>{{ dictlm.4.users }}</td>
+              <td>{{ dictlm.4.newusers }}</td>
+              <td>{{ dictlm.4.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlm.5.name}}</td>
+              <td>{{ dictlm.5.users }}</td>
+              <td>{{ dictlm.5.newusers }}</td>
+              <td>{{ dictlm.5.avgsd }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <font color="blue"><b class="card-title">This Month</b></font>
+            <!-- insert canvas -->
+          <canvas id="thismonth"> </canvas>
+          <br><span class="badge badge-success">Insights</span>
+          <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Users</th>
+              <th>New users</th>
+              <th>Secs</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>{{dicttm.1.name}}</td>
+              <td>{{ dicttm.1.users }}</td>
+              <td>{{ dicttm.1.newusers }}</td>
+              <td>{{ dicttm.1.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dicttm.2.name}}</td>
+              <td>{{ dicttm.2.users }}</td>
+              <td>{{ dicttm.2.newusers }}</td>
+              <td>{{ dicttm.2.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dicttm.3.name}}</td>
+              <td>{{ dicttm.3.users }}</td>
+              <td>{{ dicttm.3.newusers }}</td>
+              <td>{{ dicttm.3.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dicttm.4.name}}</td>
+              <td>{{ dicttm.4.users }}</td>
+              <td>{{ dicttm.4.newusers }}</td>
+              <td>{{ dicttm.4.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dicttm.5.name}}</td>
+              <td>{{ dicttm.5.users }}</td>
+              <td>{{ dicttm.5.newusers }}</td>
+              <td>{{ dicttm.5.avgsd }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<br>
+
+<br>
+
+<!-- LIFETIME REPORT -->
+
+<div class="card">
+  <h4 class="card-header" align="center">Lifetime Report</h4>
+  <div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <font color="Blue"><b class="card-title">Lifetime</b> </font>
+            <!-- insert canvas -->
+            <canvas id="lifetime"></canvas>
+            <br><span class="badge badge-success">Insights</span>
+
+        <table class="table table-bordered table-inverse">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Users</th>
+              <th>New users</th>
+              <th>Secs</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>{{dictlt.1.name}}</td>
+              <td>{{ dictlt.1.users }}</td>
+              <td>{{ dictlt.1.newusers }}</td>
+              <td>{{ dictlt.1.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlt.2.name}}</td>
+              <td>{{ dictlt.2.users }}</td>
+              <td>{{ dictlt.2.newusers }}</td>
+              <td>{{ dictlt.2.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlt.3.name}}</td>
+              <td>{{ dictlt.3.users }}</td>
+              <td>{{ dictlt.3.newusers }}</td>
+              <td>{{ dictlt.3.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlt.4.name}}</td>
+              <td>{{ dictlt.4.users }}</td>
+              <td>{{ dictlt.4.newusers }}</td>
+              <td>{{ dictlt.4.avgsd }}</td>
+
+
+            </tr>
+            <tr>
+
+              <td>{{dictlt.5.name}}</td>
+              <td>{{ dictlt.5.users }}</td>
+              <td>{{ dictlt.5.newusers }}</td>
+              <td>{{ dictlt.5.avgsd }}</td>
+
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+
+<!-- WEEK -->
+<script>
+
+
+
+      var ctx = document.getElementById('7days').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ['{{ dict7.1.name }}','{{ dict7.2.name }}','{{ dict7.3.name }}','{{ dict7.4.name }}','{{ dict7.5.name }}','{{ dict7.6.name }}'],
+          datasets: [{
+            label : 'Sessions across Countries',
+            data: [{{ dict7.1.sessions }},{{ dict7.2.sessions }},{{ dict7.3.sessions }},{{ dict7.4.sessions }},{{ dict7.5.sessions }},{{ dict7.6.sessions }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+            ]
+          }]
+        }
+      });
+
+</script>
+
+<script>
+
+
+
+      var ctx = document.getElementById('14days').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ['{{ dict7.1.name }}','{{ dict7.2.name }}','{{ dict7.3.name }}','{{ dict7.4.name }}','{{ dict7.5.name }}','{{ dict7.6.name }}'],
+          datasets: [{
+            label : 'Sessions across Countries',
+            data: [{{ dict14.1.sessions }},{{ dict14.2.sessions }},{{ dict14.3.sessions }},{{ dict14.4.sessions }},{{ dict14.5.sessions }},{{ dict14.6.sessions }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+            ]
+          }]
+        }
+      });
+
+</script>
+
+
+<!--MONTH -->
+
+<script>
+
+
+
+      var ctx = document.getElementById('lastmonth').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ['{{ dictlm.1.name }}','{{ dictlm.2.name }}','{{ dictlm.3.name }}','{{ dictlm.4.name }}','{{ dictlm.5.name }}','{{ dictlm.6.name }}'],
+          datasets: [{
+            label : 'Sessions across Countries',
+            data: [{{ dictlm.1.sessions }},{{ dictlm.2.sessions }},{{ dictlm.3.sessions }},{{ dictlm.4.sessions }},{{ dictlm.5.sessions }},{{ dictlm.6.sessions }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+            ]
+          }]
+        }
+      });
+
+</script>
+
+<script>
+
+
+
+      var ctx = document.getElementById('thismonth').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+          labels: ['{{ dict7.1.name }}','{{ dict7.2.name }}','{{ dict7.3.name }}','{{ dict7.4.name }}','{{ dict7.5.name }}','{{ dict7.6.name }}'],
+          datasets: [{
+            label : 'Sessions across Countries',
+            data: [{{ dicttm.1.sessions }},{{ dicttm.2.sessions }},{{ dicttm.3.sessions }},{{ dicttm.4.sessions }},{{ dicttm.5.sessions }},{{ dicttm.6.sessions }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+            ]
+          }]
+        }
+      });
+
+</script>
+
+
+<!-- LIFETIME -->
+
+
+<script>
+
+
+
+      var ctx = document.getElementById('lifetime').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['{{ dictlt.1.name }}','{{ dictlt.2.name }}','{{ dictlt.3.name }}','{{ dictlt.4.name }}','{{ dictlt.5.name }}','{{ dictlt.6.name }}'],
+          datasets: [{
+            label : 'Sessions across Cities',
+            data: [{{ dictlt.1.sessions }},{{ dictlt.2.sessions }},{{ dictlt.3.sessions }},{{ dictlt.4.sessions }},{{ dictlt.5.sessions }},{{ dictlt.6.sessions }}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+            ]
+          }]
+        }
+      });
+
+</script>
+
+
+{% endblock %}
+

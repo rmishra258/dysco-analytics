@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="card">
+  <h4 class="card-header" align="center"><i class="fa fa-university" aria-hidden="true"></i> App users data</h4>
+  <div class="card-body">
+    <h3 class="card-title">What to take away from this report</h3>
+      <p class="card-text">This report shows the various statistics of the <b>Dysco App users.</b> Here you will find the data about various stats across last 7 days, last 14 days, last month and current month and lifetime distribution about the app </p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> This report helps to project the diversity across audience who have installed the App</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> The <span class="badge badge-success">Insights</span> tab gives a detailed information regarding various aspects related to the App</p>
+
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card border-success bg-primary text-white">
+      <div class="card-body">
+        <h4 class="card-title">Total installs</h4>
+          <h4 class="card-title">{{ totalinstalls }} </h4>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card border-success bg-success text-white">
+      <div class="card-body">
+        <h4 class="card-title">Completed installs</h4>
+          <h4 class="card-title">{{ completeinstalls }} </h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card border-success bg-danger text-white">
+      <div class="card-body">
+        <h4 class="card-title">Incomplete installs</h4>
+          <h4 class="card-title">{{ incominstalls }} </h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
