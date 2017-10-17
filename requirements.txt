@@ -11,4 +11,4 @@ six==1.10.0
 pandas
 datetime
 python-firebase
-collections
+
