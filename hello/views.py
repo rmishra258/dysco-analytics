@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import pandas as pd
 import datetime
-import random
 from firebase import firebase
 from collections import Counter
 from datetime import date
@@ -42,7 +41,7 @@ def test(request):
     labels = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
     my_colors = ['bg-primary', 'bg-secondary', 'bg-success']
 
-    colors = random.choice(my_colors)
+
     return render(request, 'test.html', locals())
 
 

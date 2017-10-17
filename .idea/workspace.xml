@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42349ec0-fde2-4834-a5ff-c04f9ac539cb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gettingstarted/requirements.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/views.py" afterPath="$PROJECT_DIR$/hello/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,25 +18,24 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hello/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8400">
-              <caret line="1562" column="0" lean-forward="false" selection-start-line="1562" selection-start-column="0" selection-end-line="1562" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
-                <element signature="e#1110#1321#0" expanded="false" />
-                <element signature="e#1651#1797#0" expanded="false" />
-                <element signature="e#1824#2039#0" expanded="false" />
-                <element signature="e#2066#2101#0" expanded="false" />
-                <element signature="e#2127#2161#0" expanded="false" />
-                <element signature="e#2204#11902#0" expanded="false" />
-                <element signature="e#12036#19960#0" expanded="false" />
-                <element signature="e#20011#28053#0" expanded="false" />
-                <element signature="e#28104#35976#0" expanded="false" />
-                <element signature="e#36032#41315#0" expanded="false" />
-                <element signature="e#41367#46480#0" expanded="false" />
-                <element signature="e#46510#51507#0" expanded="false" />
-                <element signature="e#51551#55775#0" expanded="false" />
-                <element signature="e#55819#56600#0" expanded="false" />
-                <element signature="e#56653#57315#0" expanded="false" />
+                <element signature="e#1096#1307#0" expanded="false" />
+                <element signature="e#1600#1746#0" expanded="false" />
+                <element signature="e#1773#1988#0" expanded="false" />
+                <element signature="e#2015#2050#0" expanded="false" />
+                <element signature="e#2076#2110#0" expanded="false" />
+                <element signature="e#2153#11851#0" expanded="false" />
+                <element signature="e#11985#19909#0" expanded="false" />
+                <element signature="e#19960#28002#0" expanded="false" />
+                <element signature="e#28053#35925#0" expanded="false" />
+                <element signature="e#35981#41264#0" expanded="false" />
+                <element signature="e#41316#46429#0" expanded="false" />
+                <element signature="e#46459#51456#0" expanded="false" />
+                <element signature="e#51500#55724#0" expanded="false" />
+                <element signature="e#55768#56549#0" expanded="false" />
+                <element signature="e#56602#57264#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -53,8 +54,8 @@
       <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            <state relative-caret-position="165">
+              <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -84,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/gettingstarted/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="18" column="50" lean-forward="true" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+              <caret line="18" column="50" lean-forward="false" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -96,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/gettingstarted/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1305">
-              <caret line="88" column="1" lean-forward="true" selection-start-line="88" selection-start-column="1" selection-end-line="88" selection-end-column="1" />
+              <caret line="88" column="1" lean-forward="false" selection-start-line="88" selection-start-column="1" selection-end-line="88" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -115,6 +116,7 @@
     <findStrings>
       <find>users</find>
       <find>print</find>
+      <find>random</find>
     </findStrings>
     <replaceStrings>
       <replace>sessions</replace>
@@ -620,7 +622,7 @@
     <entry file="file://$PROJECT_DIR$/gettingstarted/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="18" column="50" lean-forward="true" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+          <caret line="18" column="50" lean-forward="false" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -630,33 +632,8 @@
     <entry file="file://$PROJECT_DIR$/gettingstarted/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1305">
-          <caret line="88" column="1" lean-forward="true" selection-start-line="88" selection-start-column="1" selection-end-line="88" selection-end-column="1" />
+          <caret line="88" column="1" lean-forward="false" selection-start-line="88" selection-start-column="1" selection-end-line="88" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hello/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8400">
-          <caret line="1562" column="0" lean-forward="false" selection-start-line="1562" selection-start-column="0" selection-end-line="1562" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#1110#1321#0" expanded="false" />
-            <element signature="e#1651#1797#0" expanded="false" />
-            <element signature="e#1824#2039#0" expanded="false" />
-            <element signature="e#2066#2101#0" expanded="false" />
-            <element signature="e#2127#2161#0" expanded="false" />
-            <element signature="e#2204#11902#0" expanded="false" />
-            <element signature="e#12036#19960#0" expanded="false" />
-            <element signature="e#20011#28053#0" expanded="false" />
-            <element signature="e#28104#35976#0" expanded="false" />
-            <element signature="e#36032#41315#0" expanded="false" />
-            <element signature="e#41367#46480#0" expanded="false" />
-            <element signature="e#46510#51507#0" expanded="false" />
-            <element signature="e#51551#55775#0" expanded="false" />
-            <element signature="e#55819#56600#0" expanded="false" />
-            <element signature="e#56653#57315#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -668,10 +645,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hello/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <folding>
+            <element signature="e#1096#1307#0" expanded="false" />
+            <element signature="e#1600#1746#0" expanded="false" />
+            <element signature="e#1773#1988#0" expanded="false" />
+            <element signature="e#2015#2050#0" expanded="false" />
+            <element signature="e#2076#2110#0" expanded="false" />
+            <element signature="e#2153#11851#0" expanded="false" />
+            <element signature="e#11985#19909#0" expanded="false" />
+            <element signature="e#19960#28002#0" expanded="false" />
+            <element signature="e#28053#35925#0" expanded="false" />
+            <element signature="e#35981#41264#0" expanded="false" />
+            <element signature="e#41316#46429#0" expanded="false" />
+            <element signature="e#46459#51456#0" expanded="false" />
+            <element signature="e#51500#55724#0" expanded="false" />
+            <element signature="e#55768#56549#0" expanded="false" />
+            <element signature="e#56602#57264#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        <state relative-caret-position="165">
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
           <folding />
         </state>
       </provider>
