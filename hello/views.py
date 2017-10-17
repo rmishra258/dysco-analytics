@@ -6,6 +6,7 @@ from firebase import firebase
 from collections import Counter
 from datetime import date
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
 
 
 from .models import Greeting
@@ -27,13 +28,14 @@ result = firebase.get('/users', None)
 
 
 # Create your views here.
+@login_required(login_url='login')
 def index(request):
     # return HttpResponse('Hello from Python!')
     date_time = analytics_data.parse('Test Dysco')
     date_time = date_time.loc[0, 'Unnamed: 1']
     return render(request, 'index.html', {'last_update' : date_time})
 
-
+@login_required(login_url='login')
 def test(request):
 
     apple_data = [12, 19, 3, 17, 6, 3, 7]
@@ -44,7 +46,7 @@ def test(request):
 
     return render(request, 'test.html', locals())
 
-
+@login_required(login_url='login')
 def db(request):
 
     greeting = Greeting()
@@ -62,18 +64,19 @@ def base(request):
     today = datetime.datetime.now()
     return render(request, 'index.html', {'last_update': date_time, 'today' : today})
 
-
+@login_required(login_url='login')
 def blog(request):
 
     return render(request, 'blog.html')
 
-
+@login_required(login_url='login')
 def app(request):
 
     return render(request, 'app.html')
 
 #BLOG DATA
 
+@login_required(login_url='login')
 def bloggender(request):
     gender = analytics_data
 
@@ -333,6 +336,7 @@ def bloggender(request):
 ##AGE GROUPS
 ##IGNORE THE NAME 'GENDER', ITS JUST A REPLICATION OF VARIABLES FROM DIFFERENT SHEET
 
+@login_required(login_url='login')
 def blogagegroup(request):
 
     dict7 = analytics_data.parse('Age group  last 7 days')
@@ -469,6 +473,7 @@ def blogagegroup(request):
 #BLOG LOCATION
 
 
+@login_required(login_url='login')
 def bloglocation(request):
     dict7 = analytics_data.parse('Location last 7 days')
 
@@ -583,6 +588,7 @@ def bloglocation(request):
 
 #INTERNATIONAL
 
+@login_required(login_url='login')
 def international(request):
     dict7 = analytics_data.parse('Int last 7 days')
 
@@ -697,6 +703,7 @@ def international(request):
 
 #OPERATION SYSTEM
 
+@login_required(login_url='login')
 def operatingsystem(request):
     dict7 = analytics_data.parse('Device last 7 days')
     dict7 = dict7.loc[14:, ['Device last 7 days', 'Unnamed: 1', 'Unnamed: 2', ]]
@@ -782,6 +789,7 @@ def operatingsystem(request):
 
 #Interest Group
 
+@login_required(login_url='login')
 def bloginterest(request):
 
 
@@ -857,6 +865,7 @@ def bloginterest(request):
 
     return render(request, 'blogFiles/interest.html', locals())
 
+@login_required(login_url='login')
 def articles(request):
 
     dict7 = analytics_data.parse('page last 7 days')
@@ -935,6 +944,7 @@ def articles(request):
 # MOBILE APP
 
 
+@login_required(login_url='login')
 def screens(request):
     # IOS Screens
 
@@ -1005,6 +1015,7 @@ def screens(request):
 
 #App users
 
+@login_required(login_url='login')
 def appusers(request):
 
 
@@ -1055,6 +1066,7 @@ def appusers(request):
 
 # APP LOCATIONS
 
+@login_required(login_url='login')
 def applocation(request):
 
 
@@ -1106,6 +1118,7 @@ def applocation(request):
 
 # App uesr Interest
 
+@login_required(login_url='login')
 def appinterest(request):
 
 
@@ -1205,6 +1218,7 @@ def appinterest(request):
 
 # App Trending profiles
 
+@login_required(login_url='login')
 def trendingProfiles(request):
     fullname = []
     views = []

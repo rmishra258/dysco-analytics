@@ -1,6 +1,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth.views import login
+from django.contrib.auth import views as auth_views
 
 
 
@@ -17,6 +18,7 @@ import hello.views
 
 urlpatterns = [
     url('^', include('django.contrib.auth.urls')),
+    url('^login/$', auth_views.LoginView.as_view()),
     url(r'^$', hello.views.index, name='index'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^admin/', include(admin.site.urls)),
