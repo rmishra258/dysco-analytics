@@ -20,7 +20,7 @@ import hello.views
 urlpatterns = [
     url('^', include('django.contrib.auth.urls')),
     url('^login/$', auth_views.LoginView.as_view()),
-    url(r'^logout/$', auth_views.LogoutView.as_view(), {'next_page': '/'}, name='auth_logout'),
+    url(r'^logout/$', auth_views.LogoutView.as_view(), {'next_page': '/login'}, name='auth_logout'),
     url(r'^$', hello.views.index, name='index'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^admin/', include(admin.site.urls)),
