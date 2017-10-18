@@ -3,17 +3,22 @@
 
 {% block content %}
 
+<div class="container">
 
-  <!-- DATE AND TIME UPDATE -->
-  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    Last updated on<strong> {{ last_update}} </strong> Statistics update on hourly basis
-  </div>
-<!-- END OF DATE-TIME UPDATE -->
+<!--Welcome message -->
+<div class="row">
+<div class="alert alert-success col-sm-10" role="alert">
 
+  <h4 class="alert-heading">Welcome {{ info.first_name }} {{ info.last_name }}! </h4>
+  <p>Last login : {{ info.last_login }} <br> Blog updated : {{ info.last_update }}<br>App stats update on realtime basis </p>
+  <hr>
+  <p class="mb-0"></p>
+</div>
+<div class="alert alert-white col-md-2" role="alert" >
+  <img src="{{ info.picurl }}" class="img-thumbnail" height="150" width="150">
 
+</div>
+</div>
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4"><img src="https://www.dyscoapp.com/wp-content/themes/trevillion-child/assets/img/blurb/dysco-animated-logo.gif" style="max-width:10rem;">Dysco Analytics</h1>
@@ -42,5 +47,6 @@
   </div>
 </div>
 
+</div>
 
 {% endblock %}

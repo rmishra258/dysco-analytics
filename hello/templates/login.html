@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<div class="form-group">
+
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
@@ -21,7 +23,7 @@
 
 
     <p>{{ form.username.label_tag }}</p>
-    <p>sdfdsf{{ form.username }}</p>
+    <p>{{ form.username }}</p>
 
     <p>{{ form.password.label_tag }}</p>
     <p>{{ form.password }}</p>
@@ -33,5 +35,5 @@
 
 {# Assumes you setup the password_reset view in your URLconf #}
 <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-
+</div>
 {% endblock %}

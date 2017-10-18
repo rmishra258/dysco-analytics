@@ -30,10 +30,42 @@ result = firebase.get('/users', None)
 # Create your views here.
 @login_required(login_url='login')
 def index(request):
-    # return HttpResponse('Hello from Python!')
+
+
     date_time = analytics_data.parse('Test Dysco')
     date_time = date_time.loc[0, 'Unnamed: 1']
-    return render(request, 'index.html', {'last_update' : date_time})
+
+
+    #get profilepic
+
+
+    picurl = []
+
+    for x in result.values():
+
+        try:
+
+            fullname = x['firstName'] + ' ' + x['lastName']
+            if fullname == request.user.first_name + ' ' + request.user.last_name:
+                picurl.append(x['photoURL'])
+
+        except KeyError:
+            pass
+
+    picurl = [x.replace('uploads', 'https://api.dyscoapp.com/uploads') for x in picurl]
+
+    info = {'last_update': date_time,
+            'first_name': request.user.first_name,
+            'last_name': request.user.last_name,
+            'last_login': request.user.last_login,
+            'email': request.user.email,
+            'picurl': picurl[0],
+            }
+
+    #get date
+
+
+    return render(request, 'index.html', locals())
 
 @login_required(login_url='login')
 def test(request):
@@ -56,12 +88,13 @@ def db(request):
 
     return render(request, 'db.html', {'greetings': greetings})
 
-
+@login_required(login_url='login')
 def base(request):
 
     date_time = analytics_data.parse('Test Dysco')
     date_time = date_time.loc[0, 'Unnamed: 1']
     today = datetime.datetime.now()
+
     return render(request, 'index.html', {'last_update': date_time, 'today' : today})
 
 @login_required(login_url='login')
