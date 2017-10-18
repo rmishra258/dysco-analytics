@@ -39,7 +39,7 @@ def index(request):
     #get profilepic
 
 
-    picurl = []
+    picurl = ''
 
     for x in result.values():
 
@@ -47,19 +47,19 @@ def index(request):
 
             fullname = x['firstName'] + ' ' + x['lastName']
             if fullname == request.user.first_name + ' ' + request.user.last_name:
-                picurl.append(x['photoURL'])
+                picurl = x['photoURL']
 
         except KeyError:
             pass
 
-    picurl = [x.replace('uploads', 'https://api.dyscoapp.com/uploads') for x in picurl]
+    picurl = picurl.replace('uploads', 'https://api.dyscoapp.com/uploads')
 
     info = {'last_update': date_time,
             'first_name': request.user.first_name,
             'last_name': request.user.last_name,
             'last_login': request.user.last_login,
             'email': request.user.email,
-            'picurl': picurl[0],
+            'picurl': picurl,
             }
 
     #get date
