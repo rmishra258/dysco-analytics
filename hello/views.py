@@ -7,6 +7,7 @@ from collections import Counter
 from datetime import date
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
+import operator
 
 
 from .models import Greeting
@@ -1845,3 +1846,35 @@ def topPosts(request):
 
     return render(request, 'appFiles/top-posts.html', locals())
 
+
+
+#App agegroup
+
+def appagegroup(request):
+
+
+    age = []
+
+    for x in result.values():
+
+        try:
+
+            age.append(int(x['yob']))
+
+        except KeyError:
+
+            pass
+
+    age = [date.today().year - x for x in age]
+
+    age = dict(Counter(age))
+
+    age = sorted(age.items(), key=operator.itemgetter(1), reverse=True)
+
+    age = dict(age)
+
+    age_key = age.keys
+    age_value = age.values
+
+
+    return render(request, 'appFiles/agegroup.html', locals())

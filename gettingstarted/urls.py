@@ -93,6 +93,10 @@ urlpatterns = [
 
     url(r'app/top-posts/$', hello.views.topPosts, name='app-topposts'),
 
+    #App Age GROUP
+
+    url(r'app/age-group/$', hello.views.appagegroup, name='app-agegroup'),
+
 
 
 ]
