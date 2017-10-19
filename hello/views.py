@@ -1610,4 +1610,238 @@ def trendingProfiles(request):
 
     return render(request, 'appFiles/trending.html', locals())
 
+def topPosts(request):
+    # TOP POSTS
+
+
+    postedby = []
+    hearts = []
+    views = []
+    shares = []
+    repost = []
+    title = []
+    description = []
+    createdDate = []
+    postedbyName = []
+    postedbyUrl = []
+    monthCreated = []
+    yearCreated = []
+    mediaurl = []
+
+    for x in app_result.values():
+
+        try:
+
+            try:
+
+                mediaurl.append(x['embedly']['thumbnail_url'])
+
+            except KeyError:
+
+                data = x['image_data']['full_image']
+                mediaurl.append(data.replace('uploads', 'https://api.dyscoapp.com/uploads'))
+
+
+
+        except KeyError:
+            mediaurl.append(
+                'https://thumbs.dreamstime.com/t/cartoon-group-people-saying-no-raised-fists-vector-65676914.jpg')
+
+        try:
+
+            title.append(x['title'])
+
+        except KeyError:
+            title.append('unknown')
+
+        try:
+
+            description.append(x['description']['text'])
+
+
+        except KeyError:
+            description.append('unknown')
+
+        try:
+            createdDate.append(x['post_created_at'][:10])
+
+        except KeyError:
+            createdDate.append('unknown')
+
+        try:
+            monthCreated.append(int(x['post_created_at'][5:7]))
+
+        except KeyError:
+            monthCreated.append('unknown')
+
+        try:
+            yearCreated.append(int(x['post_created_at'][0:4]))
+
+        except KeyError:
+            yearCreated.append('unknown')
+
+        try:
+
+            repost.append(x['shareDysco'])
+
+        except:
+            repost.append(0)
+
+        try:
+
+            shares.append(x['share'])
+
+        except KeyError:
+            shares.append(0)
+
+        try:
+
+            hearts.append(len(x['hearts']))
+
+        except KeyError:
+            hearts.append(0)
+
+        try:
+
+            views.append(len(x['views']))
+
+        except KeyError:
+            views.append(0)
+
+        try:
+            # postedby.append(result.keys()[result.values().index(x)])
+            postedby.append(x['userid'])
+
+        except KeyError:
+            postedby.append('uknown')
+
+        try:
+            postedbyUrl.append(app_result.keys()[app_result.values().index(x)])
+
+        except:
+            postedbyUrl.append('unknown')
+
+    # mediaurl = [x.replace('uploads', 'https://api.dyscoapp.com/uploads') for x in mediaurl]
+
+    postedbyUrl = ['https://www.dyscoapp.com/app/p/' + x for x in postedbyUrl]
+
+    posts = {'title': title, 'description': description, 'postedby': postedby, 'hearts': hearts,
+             'views': views, 'shares': shares, 'repost': repost, 'createdDate': createdDate, 'postedbyUrl': postedbyUrl,
+             'monthCreated': monthCreated, 'yearCreated': yearCreated, 'mediaurl': mediaurl}
+
+    posts = pd.DataFrame.from_dict(posts)
+
+    posts['score'] = (posts['hearts'] * 3) + (posts['shares'] * 5) + posts['views'] + (posts['repost'] * 5)
+
+    posts = posts.sort_values('score', ascending=False)
+
+    # TOP 5 POSTS
+
+    top5 = posts.head()
+
+    for y in top5['postedby']:
+
+        for x in users.values():
+
+            if users.keys()[users.values().index(x)] == y:
+                postedbyName.append(x['firstName'])
+
+    top5['postedby'] = postedbyName
+
+    # top5month
+
+    current_year = int(date.today().year)
+    current_month = int(date.today().month)
+    month_postedbyName = []
+
+    top5month = posts[posts['yearCreated'] == current_year][posts['monthCreated'] == current_month].head()
+
+    for y in top5month['postedby']:
+
+        for x in users.values():
+
+            if users.keys()[users.values().index(x)] == y:
+                month_postedbyName.append(x['firstName'])
+
+    top5month['postedby'] = month_postedbyName
+
+    month5 = {'1': {'title': list(top5month['title'])[0], 'description': list(top5month['description'])[0][:60],
+                    'postedby': list(top5month['postedby'])[0], 'hearts': list(top5month['hearts'])[0],
+                    'views': list(top5month['views'])[0], 'shares': list(top5month['shares'])[0],
+                    'repost': list(top5month['repost'])[0], 'createdDate': list(top5month['createdDate'])[0],
+                    'postedbyUrl': list(top5month['postedbyUrl'])[0],
+                    'monthCreated': list(top5month['monthCreated'])[0],
+                    'yearCreated': list(top5month['yearCreated'])[0], 'mediaurl': list(top5month['mediaurl'])[0],
+                    'score': list(top5month['score'])[0]},
+              '2': {'title': list(top5month['title'])[1], 'description': list(top5month['description'])[1][:60],
+                    'postedby': list(top5month['postedby'])[1], 'hearts': list(top5month['hearts'])[1],
+                    'views': list(top5month['views'])[1], 'shares': list(top5month['shares'])[1],
+                    'repost': list(top5month['repost'])[1], 'createdDate': list(top5month['createdDate'])[1],
+                    'postedbyUrl': list(top5month['postedbyUrl'])[1],
+                    'monthCreated': list(top5month['monthCreated'])[1],
+                    'yearCreated': list(top5month['yearCreated'])[1], 'mediaurl': list(top5month['mediaurl'])[1],
+                    'score': list(top5month['score'])[1]},
+              '3': {'title': list(top5month['title'])[2], 'description': list(top5month['description'])[2][:60],
+                    'postedby': list(top5month['postedby'])[2], 'hearts': list(top5month['hearts'])[2],
+                    'views': list(top5month['views'])[2], 'shares': list(top5month['shares'])[2],
+                    'repost': list(top5month['repost'])[2], 'createdDate': list(top5month['createdDate'])[2],
+                    'postedbyUrl': list(top5month['postedbyUrl'])[2],
+                    'monthCreated': list(top5month['monthCreated'])[2],
+                    'yearCreated': list(top5month['yearCreated'])[2], 'mediaurl': list(top5month['mediaurl'])[2],
+                    'score': list(top5month['score'])[2]},
+              '4': {'title': list(top5month['title'])[3], 'description': list(top5month['description'])[3][:60],
+                    'postedby': list(top5month['postedby'])[3], 'hearts': list(top5month['hearts'])[3],
+                    'views': list(top5month['views'])[3], 'shares': list(top5month['shares'])[3],
+                    'repost': list(top5month['repost'])[3], 'createdDate': list(top5month['createdDate'])[3],
+                    'postedbyUrl': list(top5month['postedbyUrl'])[3],
+                    'monthCreated': list(top5month['monthCreated'])[3],
+                    'yearCreated': list(top5month['yearCreated'])[3], 'mediaurl': list(top5month['mediaurl'])[3],
+                    'score': list(top5month['score'])[3]},
+              '5': {'title': list(top5month['title'])[4], 'description': list(top5month['description'])[4][:60],
+                    'postedby': list(top5month['postedby'])[4], 'hearts': list(top5month['hearts'])[4],
+                    'views': list(top5month['views'])[4], 'shares': list(top5month['shares'])[4],
+                    'repost': list(top5month['repost'])[4], 'createdDate': list(top5month['createdDate'])[4],
+                    'postedbyUrl': list(top5month['postedbyUrl'])[4],
+                    'monthCreated': list(top5month['monthCreated'])[4],
+                    'yearCreated': list(top5month['yearCreated'])[4], 'mediaurl': list(top5month['mediaurl'])[4],
+                    'score': list(top5month['score'])[4]}}
+
+    alltop5 = {'1': {'title': list(top5['title'])[0], 'description': list(top5['description'])[0][:60],
+                     'postedby': list(top5['postedby'])[0], 'hearts': list(top5['hearts'])[0],
+                     'views': list(top5['views'])[0], 'shares': list(top5['shares'])[0],
+                     'repost': list(top5['repost'])[0], 'createdDate': list(top5['createdDate'])[0],
+                     'postedbyUrl': list(top5['postedbyUrl'])[0],
+                     'monthCreated': list(top5['monthCreated'])[0], 'yearCreated': list(top5['yearCreated'])[0],
+                     'mediaurl': list(top5['mediaurl'])[0], 'score': list(top5['score'])[0]},
+               '2': {'title': list(top5['title'])[1], 'description': list(top5['description'])[1][:60],
+                     'postedby': list(top5['postedby'])[1], 'hearts': list(top5['hearts'])[1],
+                     'views': list(top5['views'])[1], 'shares': list(top5['shares'])[1],
+                     'repost': list(top5['repost'])[1], 'createdDate': list(top5['createdDate'])[1],
+                     'postedbyUrl': list(top5['postedbyUrl'])[1],
+                     'monthCreated': list(top5['monthCreated'])[1], 'yearCreated': list(top5['yearCreated'])[1],
+                     'mediaurl': list(top5['mediaurl'])[1], 'score': list(top5['score'])[1]},
+               '3': {'title': list(top5['title'])[2], 'description': list(top5['description'])[2][:60],
+                     'postedby': list(top5['postedby'])[2], 'hearts': list(top5['hearts'])[2],
+                     'views': list(top5['views'])[2], 'shares': list(top5['shares'])[2],
+                     'repost': list(top5['repost'])[2], 'createdDate': list(top5['createdDate'])[2],
+                     'postedbyUrl': list(top5['postedbyUrl'])[2],
+                     'monthCreated': list(top5['monthCreated'])[2], 'yearCreated': list(top5['yearCreated'])[2],
+                     'mediaurl': list(top5['mediaurl'])[2], 'score': list(top5['score'])[2]},
+               '4': {'title': list(top5['title'])[3], 'description': list(top5['description'])[3][:60],
+                     'postedby': list(top5['postedby'])[3], 'hearts': list(top5['hearts'])[3],
+                     'views': list(top5['views'])[3], 'shares': list(top5['shares'])[3],
+                     'repost': list(top5['repost'])[3], 'createdDate': list(top5['createdDate'])[3],
+                     'postedbyUrl': list(top5['postedbyUrl'])[3],
+                     'monthCreated': list(top5['monthCreated'])[3], 'yearCreated': list(top5['yearCreated'])[3],
+                     'mediaurl': list(top5['mediaurl'])[3], 'score': list(top5['score'])[3]},
+               '5': {'title': list(top5['title'])[4], 'description': list(top5['description'])[4][:60],
+                     'postedby': list(top5['postedby'])[4], 'hearts': list(top5['hearts'])[4],
+                     'views': list(top5['views'])[4], 'shares': list(top5['shares'])[4],
+                     'repost': list(top5['repost'])[4], 'createdDate': list(top5['createdDate'])[4],
+                     'postedbyUrl': list(top5['postedbyUrl'])[4],
+                     'monthCreated': list(top5['monthCreated'])[4], 'yearCreated': list(top5['yearCreated'])[4],
+                     'mediaurl': list(top5['mediaurl'])[4], 'score': list(top5['score'])[4]}}
+
+
+    return render(request, 'appFiles/top-posts.html', locals())
 

@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="card">
+  <h4 class="card-header" align="center"><i class="fa fa-file-text" aria-hidden="true"></i> Trending Articles</h4>
+  <div class="card-body">
+    <h3 class="card-title">What to take away from this report</h3>
+      <p class="card-text">This report shows the trending articles posted by Dysco app users</p>
+      <p><i class="fa fa-info-circle" aria-hidden="true"></i> Here the report is based on highest score based on the number of shares, likes and article views</p>
+
+
+  </div>
+</div>
+
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h5 class="display-5">TOP 5 Post this month</h5>
+
+      <div class="card-columns">
+        <div class="card">
+          <img class="card-img-top" src="{{ month5.1.mediaurl }}" alt="Card image cap">
+          <div class="card-body text-success">
+            <span class="badge badge-pill badge-warning">1st</span>
+            <h4 class="card-title">{{ month5.1.title }}</h4>
+            <p class="card-text"><a href="{{ month5.1.postedbyUrl }}" target="_blank">{{ month5.1.description }}...</a></p>
+            <p class="card-text"><i>By</i> {{ month5.1.postedby }}</p>
+            <p class="card-text"><i class="fa fa-share-alt-square" aria-hidden="true"></i> {{ month5.1.shares }} &nbsp; <i class="fa fa-heart" aria-hidden="true"></i> {{ month5.1.hearts }} &nbsp; <i class="fa fa-eye" aria-hidden="true"></i> {{ month5.1.views }}</p>
+            <h4 class="card-title"><i class="fa fa-superpowers" aria-hidden="true"></i> Post score {{ month5.1.score }}</h4>
+          </div>
+        </div>
+        <div class="card p-3">
+          <img class="card-img-top" src="{{ month5.2.mediaurl }}" alt="Card image cap">
+          <div class="card-body text-success">
+            <span class="badge badge-pill badge-warning">2nd</span>
+            <h4 class="card-title">{{ month5.2.title }}</h4>
+            <p class="card-text"><a href="{{ month5.2.postedbyUrl }}" target="_blank">{{ month5.2.description }}...</a></p>
+            <p class="card-text"><i>By</i> {{ month5.2.postedby }}</p>
+            <p class="card-text"><i class="fa fa-share-alt-square" aria-hidden="true"></i> {{ month5.2.shares }} &nbsp; <i class="fa fa-heart" aria-hidden="true"></i> {{ month5.2.hearts }} &nbsp; <i class="fa fa-eye" aria-hidden="true"></i> {{ month5.2.views }}</p>
+            <h4 class="card-title"><i class="fa fa-superpowers" aria-hidden="true"></i> Post score {{ month5.2.score }}</h4>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{{ month5.3.mediaurl }}" alt="Card image cap">
+          <div class="card-body text-success">
+            <span class="badge badge-pill badge-warning">3rd</span>
+            <h4 class="card-title">{{ month5.3.title }}</h4>
+            <p class="card-text"><a href="{{ month5.3.postedbyUrl }}" target="_blank">{{ month5.3.description }}...</a></p>
+            <p class="card-text"><i>By</i> {{ month5.3.postedby }}</p>
+            <p class="card-text"><i class="fa fa-share-alt-square" aria-hidden="true"></i> {{ month5.3.shares }} &nbsp; <i class="fa fa-heart" aria-hidden="true"></i> {{ month5.3.hearts }} &nbsp; <i class="fa fa-eye" aria-hidden="true"></i> {{ month5.3.views }}</p>
+            <h4 class="card-title"><i class="fa fa-superpowers" aria-hidden="true"></i> Post score {{ month5.3.score }}</h4>
+          </div>
+        </div>
+        <div class="card bg-primary p-3 text-center text-white">
+          <blockquote class="blockquote mb-0">
+            <p>Some of the Great posts of this month, keep posting to see yourself here!</p>
+            <footer class="blockquote-footer">
+
+            </footer>
+          </blockquote>
+        </div>
+        <div class="card text-center">
+          <img class="card-img-top" src="{{ month5.4.mediaurl }}" alt="Card image cap">
+          <div class="card-body text-success">
+            <span class="badge badge-pill badge-warning">4th</span>
+            <h4 class="card-title">{{ month5.4.title }}</h4>
+            <p class="card-text"><a href="{{ month5.4.postedbyUrl }}" target="_blank">{{ month5.4.description }}...</a></p>
+            <p class="card-text"><i>By</i> {{ month5.4.postedby }}</p>
+            <p class="card-text"><i class="fa fa-share-alt-square" aria-hidden="true"></i> {{ month5.4.shares }} &nbsp; <i class="fa fa-heart" aria-hidden="true"></i> {{ month5.4.hearts }} &nbsp; <i class="fa fa-eye" aria-hidden="true"></i> {{ month5.4.views }}</p>
+            <h4 class="card-title"><i class="fa fa-superpowers" aria-hidden="true"></i> Post score {{ month5.4.score }}</h4>
+          </div>
+        </div>
+
+        <div class="card p-3 text-right">
+          <img class="card-img-top" src="{{ month5.5.mediaurl }}" alt="Card image cap">
+          <div class="card-body text-success">
+            <span class="badge badge-pill badge-warning">5th</span>
+            <h4 class="card-title">{{ month5.5.title }}</h4>
+            <p class="card-text"><a href="{{ month5.5.postedbyUrl }}" target="_blank">{{ month5.5.description }}...</a></p>
+            <p class="card-text"><i>By</i> {{ month5.5.postedby }}</p>
+            <p class="card-text"><i class="fa fa-share-alt-square" aria-hidden="true"></i> {{ month5.5.shares }} &nbsp; <i class="fa fa-heart" aria-hidden="true"></i> {{ month5.5.hearts }} &nbsp; <i class="fa fa-eye" aria-hidden="true"></i> {{ month5.5.views }}</p>
+            <h4 class="card-title"><i class="fa fa-superpowers" aria-hidden="true"></i> Post score {{ month5.5.score }}</h4>
+          </div>
+        </div>
+
+      </div>
+
+  </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h5 class="display-5">Top 5 Post LifeTime</h5>
+
+
+      <div class="card-columns">
+        <div class="card">
+          <img class="card-img-top" src="{{ alltop5.1.mediaurl }}" alt="Card image cap">
+          <div class="card-body text-success">
+            <span class="badge badge-pill badge-warning">1st</span>
+            <h4 class="card-title">{{ alltop5.1.title }}</h4>
+            <p class="card-text"><a href="{{ alltop5.1.postedbyUrl }}" target="_blank">{{ alltop5.1.description }}...</a></p>
+            <p class="card-text"><i>By</i> {{ alltop5.1.postedby }}</p>
+            <p class="card-text"><i class="fa fa-share-alt-square" aria-hidden="true"></i> {{ alltop5.1.shares }} &nbsp; <i class="fa fa-heart" aria-hidden="true"></i> {{ alltop5.1.hearts }} &nbsp; <i class="fa fa-eye" aria-hidden="true"></i> {{ alltop5.1.views }}</p>
+            <h4 class="card-title"><i class="fa fa-superpowers" aria-hidden="true"></i> Post score {{ alltop5.1.score }}</h4>
+          </div>
+        </div>
+        <div class="card p-3">
+          <img class="card-img-top" src="{{ alltop5.2.mediaurl }}" alt="Card image cap">
+          <div class="card-body text-success">
+            <span class="badge badge-pill badge-warning">2nd</span>
+            <h4 class="card-title">{{ alltop5.2.title }}</h4>
+            <p class="card-text"><a href="{{ alltop5.2.postedbyUrl }}" target="_blank">{{ alltop5.2.description }}...</a></p>
+            <p class="card-text"><i>By</i> {{ alltop5.2.postedby }}</p>
+            <p class="card-text"><i class="fa fa-share-alt-square" aria-hidden="true"></i> {{ alltop5.2.shares }} &nbsp; <i class="fa fa-heart" aria-hidden="true"></i> {{ alltop5.2.hearts }} &nbsp; <i class="fa fa-eye" aria-hidden="true"></i> {{ alltop5.2.views }}</p>
+            <h4 class="card-title"><i class="fa fa-superpowers" aria-hidden="true"></i> Post score {{ alltop5.2.score }}</h4>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{{ alltop5.3.mediaurl }}" alt="Card image cap">
+          <div class="card-body text-success">
+            <span class="badge badge-pill badge-warning">3rd</span>
+            <h4 class="card-title">{{ alltop5.3.title }}</h4>
+            <p class="card-text"><a href="{{ alltop5.3.postedbyUrl }}" target="_blank">{{ alltop5.3.description }}...</a></p>
+            <p class="card-text"><i>By</i> {{ alltop5.3.postedby }}</p>
+            <p class="card-text"><i class="fa fa-share-alt-square" aria-hidden="true"></i> {{ alltop5.3.shares }} &nbsp; <i class="fa fa-heart" aria-hidden="true"></i> {{ alltop5.3.hearts }} &nbsp; <i class="fa fa-eye" aria-hidden="true"></i> {{ alltop5.3.views }}</p>
+            <h4 class="card-title"><i class="fa fa-superpowers" aria-hidden="true"></i> Post score {{ alltop5.3.score }}</h4>
+          </div>
+        </div>
+        <div class="card bg-primary p-3 text-center text-white">
+          <blockquote class="blockquote mb-0">
+            <p>Some of the Great posts since the begining of the time, keep posting to see yourself here!</p>
+            <footer class="blockquote-footer">
+
+            </footer>
+          </blockquote>
+        </div>
+        <div class="card text-center">
+          <img class="card-img-top" src="{{ alltop5.4.mediaurl }}" alt="Card image cap">
+          <div class="card-body text-success">
+            <span class="badge badge-pill badge-warning">4th</span>
+            <h4 class="card-title">{{ alltop5.4.title }}</h4>
+            <p class="card-text"><a href="{{ alltop5.4.postedbyUrl }}" target="_blank">{{ alltop5.4.description }}...</a></p>
+            <p class="card-text"><i>By</i> {{ alltop5.4.postedby }}</p>
+            <p class="card-text"><i class="fa fa-share-alt-square" aria-hidden="true"></i> {{ alltop5.4.shares }} &nbsp; <i class="fa fa-heart" aria-hidden="true"></i> {{ alltop5.4.hearts }} &nbsp; <i class="fa fa-eye" aria-hidden="true"></i> {{ alltop5.4.views }}</p>
+            <h4 class="card-title"><i class="fa fa-superpowers" aria-hidden="true"></i> Post score {{ alltop5.4.score }}</h4>
+          </div>
+        </div>
+
+        <div class="card p-3 text-right">
+          <img class="card-img-top" src="{{ alltop5.5.mediaurl }}" alt="Card image cap">
+          <div class="card-body text-success">
+            <span class="badge badge-pill badge-warning">5th</span>
+            <h4 class="card-title">{{ alltop5.5.title }}</h4>
+            <p class="card-text"><a href="{{ alltop5.5.postedbyUrl }}" target="_blank">{{ alltop5.5.description }}...</a></p>
+            <p class="card-text"><i>By</i> {{ alltop5.5.postedby }}</p>
+            <p class="card-text"><i class="fa fa-share-alt-square" aria-hidden="true"></i> {{ alltop5.5.shares }} &nbsp; <i class="fa fa-heart" aria-hidden="true"></i> {{ alltop5.5.hearts }} &nbsp; <i class="fa fa-eye" aria-hidden="true"></i> {{ alltop5.5.views }}</p>
+            <h4 class="card-title"><i class="fa fa-superpowers" aria-hidden="true"></i> Post score {{ alltop5.5.score }}</h4>
+          </div>
+        </div>
+
+      </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

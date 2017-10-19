@@ -7,6 +7,7 @@ from django.contrib.auth import views as auth_views
 
 
 
+
 admin.autodiscover()
 
 
@@ -87,6 +88,10 @@ urlpatterns = [
     # App trending profiles
 
     url(r'app/trending/$', hello.views.trendingProfiles, name='app-trending'),
+
+    # App top posts
+
+    url(r'app/top-posts/$', hello.views.topPosts, name='app-topposts'),
 
 
 
