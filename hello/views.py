@@ -41,6 +41,7 @@ def index(request):
 
 
     picurl = ''
+    user_title = ''
 
     for x in result.values():
 
@@ -49,6 +50,7 @@ def index(request):
             fullname = x['firstName'] + ' ' + x['lastName']
             if fullname == request.user.first_name + ' ' + request.user.last_name:
                 picurl = x['photoURL']
+                user_title = x['title']
 
         except KeyError:
             pass
@@ -61,6 +63,7 @@ def index(request):
             'last_login': request.user.last_login,
             'email': request.user.email,
             'picurl': picurl,
+            'user_title' : user_title,
             }
 
     #get date
