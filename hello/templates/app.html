@@ -3,7 +3,13 @@
 
 {% block content %}
 
-<h3 class="display-4" align="center">Dysco App</h3>
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="display-4" align="center">Dysco App</h3>
+  </div>
+
+</div>
 
 <br>
 <!-- cards -->
@@ -50,6 +56,27 @@
   </div>
 </div>
 <br>
+<!-- row 3-->
+
+<div class="card-deck">
+  <div class="card">
+
+    <div class="card-body">
+      <h4 class="card-title"><i class="fa fa-spin fa-star-half-o " aria-hidden="true"></i> Trending Profiles</h4>
+      <p class="card-text">Find out which profiles are trending on Dysco App</p>
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'app-trending' %}">
+      <button type="button" class="btn btn-warning">View</button>
+      </a>
+    </div>
+  </div>
+    <br>
+
+
+</div>
+
+<br>
 <div class="card-deck">
   <div class="card">
 
@@ -92,27 +119,7 @@
   </div>
 
 </div>
-<br>
 
-<!-- row 3-->
-
-<div class="card-deck">
-  <div class="card">
-
-    <div class="card-body">
-      <h4 class="card-title"><i class="fa fa-spin fa-star-half-o " aria-hidden="true"></i> Trending Profiles</h4>
-      <p class="card-text">Find out which profiles are trending on Dysco App</p>
-    </div>
-    <div class="card-footer">
-      <a href="{% url 'app-trending' %}">
-      <button type="button" class="btn btn-warning">View</button>
-      </a>
-    </div>
-  </div>
-    <br>
-
-
-</div>
 <!-- cards end -->
 
 {% endblock %}
