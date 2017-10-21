@@ -8,8 +8,6 @@ from datetime import date
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 import operator
-
-
 from .models import Greeting
 
 #render data from google analytics
