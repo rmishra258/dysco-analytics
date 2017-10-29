@@ -77,6 +77,17 @@ def test(request):
     labels = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
     my_colors = ['bg-primary', 'bg-secondary', 'bg-success']
 
+    if request.method == 'POST':
+
+        print request.POST
+
+        my_name = request.POST['comment']
+
+    else:
+
+        print 'form unsuccessful'
+
+
 
     return render(request, 'test.html', locals())
 
